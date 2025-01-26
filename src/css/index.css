@@ -21,3 +21,18 @@ form button {
 form label span {
    flex: 1;
 }
+
+.feeding-item {
+   display:flex;
+   flex-direction: column;
+}
+
+.feeding-item div {
+   display: flex;
+   justify-content: space-around;
+   padding-top: .25em;
+}
+
+.feeding-item div:last-child {
+   /* justify-content: start; */
+}

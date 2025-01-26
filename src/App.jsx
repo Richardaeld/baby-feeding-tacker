@@ -1,5 +1,7 @@
 // import { useState } from 'react'
+import { useState } from 'react';
 import { Form } from './components/Form';
+import { Feeding } from './components/Feeding';
 
 const form = {
   header: 'Add Feeding',
@@ -8,10 +10,10 @@ const form = {
       name:'name',
       type: 'input',
     },
-    {
-      name: 'time',
-      type: 'input',
-    },
+    // {
+    //   name: 'time',
+    //   type: 'input',
+    // },
     {
       name: 'consumed',
       type: 'input',
@@ -29,8 +31,33 @@ const form = {
 }
 form.inputs.map(input => input.key = crypto.randomUUID());
 
+const feedings= [
+  {
+      key:crypto.randomUUID,
+      name: 'A',
+      time: "YYYY/MM/DD H:I:S",
+      consumed: 23,
+      extra_hungry: true,
+      notes: 'burp up',
+  }
+];
+
 export function App() {
-  // const [count, setCount] = useState(0)
+  const [feeding, setFeeding] = useState("");
+
+  function addFeeding (feeding) {
+    setFeeding(currentFeedings => [
+      ...currentFeedings,
+      {
+        key:feeding.key,
+        time:new Date(),
+        consumed:feeding.consumed,
+        extra_hungry:feeding.extra_hungry,
+        notes:feeding.notes,
+      }
+    ])
+  }
+
 
   return (
     <main>
@@ -44,8 +71,8 @@ export function App() {
           <h3>baby name</h3>
         </div>
       </div>
-
-    <Form form={form}></Form>
+      <Form form={form}></Form>
+      <Feeding feedings={feedings}/>
 
     </main>
   )
