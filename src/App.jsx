@@ -6,23 +6,23 @@ const form = {
   inputs: [
     {
       name:'name',
-      input: 'input',
+      type: 'input',
     },
     {
       name: 'time',
-      input: 'input',
+      type: 'input',
     },
     {
       name: 'consumed',
-      input: 'input',
+      type: 'input',
     },
     {
       name: 'extra_hungry',
-      input: 'input_checkbox',
+      type: 'input_checkbox',
     },
     {
       name:'notes',
-      input:'textarea',
+      type:'textarea',
     }
   ]
 }

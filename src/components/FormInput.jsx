@@ -1,27 +1,25 @@
 import PropTypes from 'prop-types';
 
-export function FormInput ({ formInput  }) {
-   
+export function FormInput ({ input  }) {
    
 
+
    return (
-      <label htmlFor={formInput.name}>
-         <span>{formInput.name}</span>
+      <label htmlFor={input.name}>
+         <span>{input.name}</span>
          <input 
-            id={formInput.name}
+            id={input.name}
             type="text"
-            name={formInput.name}
+            name={input.name}
          />
       </label>
    )
 }
 
 FormInput.propTypes = {
-   formInput: PropTypes.arrayOf(
-      PropTypes.shape({
-         id:PropTypes.string.isRequired,
-         name:PropTypes.string.isRequired,
-         inputType:PropTypes.string.isRequired,
-      })
-   ).isRequired,
+   input: PropTypes.shape({
+      id:PropTypes.string.isRequired,
+      name:PropTypes.string.isRequired,
+      type:PropTypes.string.isRequired,
+   }).isRequired
 }
