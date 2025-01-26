@@ -19,6 +19,7 @@ const form = {
     {
       name: 'extra_hungry',
       type: 'input_checkbox',
+      checked: false,
     },
     {
       name:'notes',
@@ -26,7 +27,7 @@ const form = {
     }
   ]
 }
-form.inputs.map(input => input.id = crypto.randomUUID());
+form.inputs.map(input => input.key = crypto.randomUUID());
 
 export function App() {
   // const [count, setCount] = useState(0)

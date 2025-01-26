@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
+import { capitalizeEveryFirstLetter } from './../js/general.js';
 
 export function FormInput ({ input  }) {
    
-
-
    return (
       <label htmlFor={input.name}>
-         <span>{input.name}</span>
+         <span>{capitalizeEveryFirstLetter(input.name)}</span>
          <input 
             id={input.name}
             type="text"

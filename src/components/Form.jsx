@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { FormInput } from './FormInput'
 import { FormTextarea } from './FormTextarea';
+import { FormCheckbox } from './FormCheckbox';
 
 export function Form ({ form }) {
 
@@ -10,10 +11,13 @@ export function Form ({ form }) {
          {form.inputs.map(input => {
             console.log(input.type)
             switch (input.type) {
-               case 'textarea': return <FormTextarea key={input.id} textarea={input}/>
+               case 'textarea': return <FormTextarea key={input.key} textarea={input}/>
+               case 'input_checkbox': return <FormCheckbox key={input.key} checkbox={input}/>
 
-               case 'input': 
-               default     : return <FormInput key={input.id} input={input}/>
+
+               case 'input':
+               case 'input_text': return <FormInput key={input.key} input={input}/>
+               // default     : 
             }
          })}
 
