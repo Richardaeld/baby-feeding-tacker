@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 import { capitalizeEveryFirstLetter } from './../js/general.js';
+import { useState } from 'react';
 
 export function FormCheckbox({ checkbox }) {
+   const [newValue, setNewValue] = useState("");
+
   return (
       <label htmlFor={checkbox.name}>
          <span>{capitalizeEveryFirstLetter(checkbox.name)}</span>
@@ -9,7 +12,8 @@ export function FormCheckbox({ checkbox }) {
             id={checkbox.name}
             type="checkbox"
             name={checkbox.name}
-            checked={checkbox.checked}
+            onChange={e => setNewValue(e.target.checked)}
+            checked={newValue}
          />
       </label>
   )

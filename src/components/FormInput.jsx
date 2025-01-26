@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import { capitalizeEveryFirstLetter } from './../js/general.js';
+import { useState } from 'react';
 
 export function FormInput ({ input  }) {
-   
+   const [newValue, setNewValue] = useState("");
+
    return (
       <label htmlFor={input.name}>
          <span>{capitalizeEveryFirstLetter(input.name)}</span>
@@ -10,6 +12,8 @@ export function FormInput ({ input  }) {
             id={input.name}
             type="text"
             name={input.name}
+            onChange={e => setNewValue(e.target.value)}
+            value={newValue}
          />
       </label>
    )
