@@ -1,4 +1,32 @@
 // import { useState } from 'react'
+import { Form } from './components/Form';
+
+const form = {
+  header: 'Add Feeding',
+  inputs: [
+    {
+      name:'name',
+      input: 'input',
+    },
+    {
+      name: 'time',
+      input: 'input',
+    },
+    {
+      name: 'consumed',
+      input: 'input',
+    },
+    {
+      name: 'extra_hungry',
+      input: 'input_checkbox',
+    },
+    {
+      name:'notes',
+      input:'textarea',
+    }
+  ]
+}
+form.inputs.map(input => input.id = crypto.randomUUID());
 
 export function App() {
   // const [count, setCount] = useState(0)
@@ -16,38 +44,7 @@ export function App() {
         </div>
       </div>
 
-    <form action="">
-      <h2>Add Feeding</h2>
-      <label htmlFor=""> 
-        name
-        <input type="text" />
-      </label>
-      <label htmlFor=""> 
-        time
-        <input type="text" />
-      </label>
-      <label htmlFor=""> 
-        consumed
-        <input type="text" />
-      </label>
-      <label htmlFor=""> 
-        extra hungry
-        <input type="text" />
-      </label>
-      <label htmlFor=""> 
-        name
-        <input type="text" />
-      </label>
-      <label htmlFor=""> 
-        name
-        <input type="text" />
-      </label>
-      <label htmlFor=""> 
-        Notes
-        <textarea name="" id=""></textarea>
-      </label>
-      <button>submit</button>
-    </form>
+    <Form form={form}></Form>
 
     </main>
   )
