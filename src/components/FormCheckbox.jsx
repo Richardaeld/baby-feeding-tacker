@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { capitalizeEveryFirstLetter } from './../js/general.js';
 import { useState } from 'react';
 
-export function FormCheckbox({ checkbox }) {
+export function FormCheckbox({ checkbox, setFormData }) {
    const [newValue, setNewValue] = useState("");
 
   return (
@@ -12,7 +12,13 @@ export function FormCheckbox({ checkbox }) {
             id={checkbox.name}
             type="checkbox"
             name={checkbox.name}
-            onChange={e => setNewValue(e.target.checked)}
+            onChange={e => {
+               setNewValue(e.target.checked)
+               setFormData(prevData => ({
+                  ...prevData,
+                  [checkbox.name]: e.target.checked
+               }))
+            }}
             checked={newValue}
          />
       </label>
@@ -25,5 +31,6 @@ FormCheckbox.propTypes = {
       name:PropTypes.string.isRequired,
       type:PropTypes.string.isRequired,
       checked:PropTypes.bool.isRequired,
-   }).isRequired
+   }).isRequired,
+   setFormData: PropTypes.func
 }

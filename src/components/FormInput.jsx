@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { capitalizeEveryFirstLetter } from './../js/general.js';
 import { useState } from 'react';
 
-export function FormInput ({ input  }) {
+export function FormInput ({ input, setFormData }) {
    const [newValue, setNewValue] = useState("");
 
    return (
@@ -12,8 +12,16 @@ export function FormInput ({ input  }) {
             id={input.name}
             type="text"
             name={input.name}
-            onChange={e => setNewValue(e.target.value)}
+            onChange={e => {
+               setNewValue(e.target.value)
+               setFormData(prevData => ({
+                  ...prevData,
+                  [input.name]: e.target.value
+               }));
+            }}
             value={newValue}
+            autoComplete='off'
+
          />
       </label>
    )
@@ -24,5 +32,6 @@ FormInput.propTypes = {
       id:PropTypes.string.isRequired,
       name:PropTypes.string.isRequired,
       type:PropTypes.string.isRequired,
-   }).isRequired
+   }).isRequired,
+   setFormData:PropTypes.func
 }

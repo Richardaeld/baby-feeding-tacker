@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import FeedingItem from "./FeedingItem";
 
 export function Feeding({ feedings }) {
@@ -8,4 +9,10 @@ export function Feeding({ feedings }) {
       }
     </section>
   )
+}
+
+Feeding.propTypes = {
+   feedings: PropTypes.arrayOf({
+
+   })
 }

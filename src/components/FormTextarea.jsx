@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { capitalizeEveryFirstLetter } from './../js/general.js';
 import { useState } from 'react';
 
-export function FormTextarea ({ textarea }) {
+export function FormTextarea ({ textarea, setFormData }) {
    const [newValue, setNewValue] = useState("");
 
    return (
@@ -11,7 +11,13 @@ export function FormTextarea ({ textarea }) {
          <textarea 
             name={textarea.name}
             id={textarea.name}
-            onChange={e => setNewValue(e.target.value)}
+            onChange={e => {
+               setNewValue(e.target.value)
+               setFormData(prevData => ({
+                  ...prevData,
+                  [textarea.name]: e.target.value
+               }))
+            }}
             value={newValue}
          ></textarea>
       </label>
@@ -23,5 +29,6 @@ FormTextarea.propTypes = {
       id: PropTypes.string.isRequired,
       name:PropTypes.string.isRequired,
       type:PropTypes.string.isRequired,
-   }).isRequired
+   }).isRequired,
+   setFormData:PropTypes.func
 }

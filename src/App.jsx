@@ -31,23 +31,24 @@ const form = {
 }
 form.inputs.map(input => input.key = crypto.randomUUID());
 
-const feedings= [
-  {
-      key:crypto.randomUUID,
-      name: 'A',
-      time: "YYYY/MM/DD H:I:S",
-      consumed: 23,
-      extra_hungry: true,
-      notes: 'burp up',
-  }
-];
+// const feedings= [
+//   {
+//       key:crypto.randomUUID,
+//       name: 'A',
+//       time: "YYYY/MM/DD H:I:S",
+//       consumed: 23,
+//       extra_hungry: true,
+//       notes: 'burp up',
+//   }
+// ];
 
 export function App() {
-  const [feeding, setFeeding] = useState("");
+  const [feedings, setFeedings] = useState([]);
 
   function addFeeding (feeding) {
-    setFeeding(currentFeedings => [
-      ...currentFeedings,
+    console.log('newfeeding', feeding)
+    setFeedings([
+      ...feedings,
       {
         key:feeding.key,
         time:new Date(),
@@ -71,7 +72,7 @@ export function App() {
           <h3>baby name</h3>
         </div>
       </div>
-      <Form form={form}></Form>
+      <Form form={form} addFeeding={addFeeding} feeding={feedings}/>
       <Feeding feedings={feedings}/>
 
     </main>
