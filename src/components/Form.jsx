@@ -34,13 +34,17 @@ export function Form ({ form, addFeeding, feeding }) {
 
 Form.propTypes = {
    form: PropTypes.shape({
-      header:PropTypes.string.isRequired,
+      header:PropTypes.string,
       inputs:PropTypes.arrayOf(
          PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            name:PropTypes.string.isRequired,
-            type:PropTypes.string.isRequired,
+            id: PropTypes.string,
+            name:PropTypes.string,
+            type:PropTypes.string,
          })
       )
-   })
+   }),
+   addFeeding: PropTypes.func,
+   feeding: PropTypes.arrayOf(
+      PropTypes.shape({})
+   ),
 }

@@ -26,9 +26,9 @@ export function FormTextarea ({ textarea, setFormData }) {
 
 FormTextarea.propTypes = {
    textarea: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name:PropTypes.string.isRequired,
-      type:PropTypes.string.isRequired,
-   }).isRequired,
+      id: PropTypes.string,
+      name:PropTypes.string,
+      type:PropTypes.string,
+   }),
    setFormData:PropTypes.func
 }

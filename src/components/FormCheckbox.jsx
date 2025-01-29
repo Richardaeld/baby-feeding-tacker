@@ -27,10 +27,10 @@ export function FormCheckbox({ checkbox, setFormData }) {
 
 FormCheckbox.propTypes = {
    checkbox: PropTypes.shape({
-      id:PropTypes.string.isRequired,
-      name:PropTypes.string.isRequired,
-      type:PropTypes.string.isRequired,
-      checked:PropTypes.bool.isRequired,
-   }).isRequired,
+      id:PropTypes.string,
+      name:PropTypes.string,
+      type:PropTypes.string,
+      checked:PropTypes.bool,
+   }),
    setFormData: PropTypes.func
 }

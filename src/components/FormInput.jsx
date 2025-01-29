@@ -29,9 +29,9 @@ export function FormInput ({ input, setFormData }) {
 
 FormInput.propTypes = {
    input: PropTypes.shape({
-      id:PropTypes.string.isRequired,
-      name:PropTypes.string.isRequired,
-      type:PropTypes.string.isRequired,
-   }).isRequired,
+      id:PropTypes.string,
+      name:PropTypes.string,
+      type:PropTypes.string,
+   }),
    setFormData:PropTypes.func
 }
