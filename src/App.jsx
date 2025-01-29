@@ -39,11 +39,10 @@ export function App() {
 
 
   function addFeeding (feeding) {
-    console.log('newfeeding', feeding)
+    // console.log('newfeeding', feeding)
     setFeedings([
-      ...feedings,
-      {
-        key:crypto.randomUUID,
+      ...feedings, {
+        key:crypto.randomUUID(),
         // key:feeding.key,
         name: feeding.name,
         time:format(new Date(), 'yyyy/MM/dd HH:mm:ss'),
@@ -52,6 +51,7 @@ export function App() {
         notes:feeding.notes,
       }
     ])
+    // console.log('AllFeedings', feedings)
   }
 
 

@@ -19,7 +19,7 @@ export default function FeedingItem({ feeding }) {
 FeedingItem.propTypes = {
    feeding: PropTypes.shape({
       name:PropTypes.string,
-      time:PropTypes.date,
+      time:PropTypes.string,
       notes:PropTypes.string,
       consumed:PropTypes.number,
       extra_hungry:PropTypes.bool,

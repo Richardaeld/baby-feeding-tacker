@@ -13,6 +13,8 @@ export function Feeding({ feedings }) {
 
 Feeding.propTypes = {
   feedings: PropTypes.arrayOf(
-    PropTypes.shape({})
+    PropTypes.shape({
+      
+    })
   )
 }

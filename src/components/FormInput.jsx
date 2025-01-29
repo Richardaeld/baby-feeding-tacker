@@ -21,7 +21,6 @@ export function FormInput ({ input, setFormData }) {
             }}
             value={newValue}
             autoComplete='off'
-
          />
       </label>
    )
