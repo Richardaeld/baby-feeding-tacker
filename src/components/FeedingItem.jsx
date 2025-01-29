@@ -18,10 +18,10 @@ export default function FeedingItem({ feeding }) {
 
 FeedingItem.propTypes = {
    feeding: PropTypes.shape({
-      name:PropTypes.string.isRequired,
-      time:PropTypes.string.isRequired,
-      notes:PropTypes.string.isRequired,
-      consumed:PropTypes.number.isRequired,
-      extra_hungry:PropTypes.bool.isRequired,
-   }).isRequired
+      name:PropTypes.string,
+      time:PropTypes.date,
+      notes:PropTypes.string,
+      consumed:PropTypes.number,
+      extra_hungry:PropTypes.bool,
+   })
 }

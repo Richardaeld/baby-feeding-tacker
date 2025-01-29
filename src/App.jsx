@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Form } from './components/Form';
 import { Feeding } from './components/Feeding';
+import { format } from 'date-fns';
 
 const form = {
   header: 'Add Feeding',
@@ -34,33 +35,18 @@ form.inputs.map(input => input.key = crypto.randomUUID());
 
 
 export function App() {
-  const [feedings, setFeedings] = useState([{
-    key:crypto.randomUUID,
-    name: 'A',
-    time: "YYYY/MM/DD H:I:S",
-    consumed: 23,
-    extra_hungry: true,
-    notes: 'burp up',
-  }]);
+  const [feedings, setFeedings] = useState([]);
 
-// const feedings= [
-//   setFeedings[{
-//       key:crypto.randomUUID,
-//       name: 'A',
-//       time: "YYYY/MM/DD H:I:S",
-//       consumed: 23,
-//       extra_hungry: true,
-//       notes: 'burp up',
-//   }
-// ];
 
   function addFeeding (feeding) {
     console.log('newfeeding', feeding)
     setFeedings([
       ...feedings,
       {
-        key:feeding.key,
-        time:new Date(),
+        key:crypto.randomUUID,
+        // key:feeding.key,
+        name: feeding.name,
+        time:format(new Date(), 'yyyy/MM/dd HH:mm:ss'),
         consumed:feeding.consumed,
         extra_hungry:feeding.extra_hungry,
         notes:feeding.notes,
