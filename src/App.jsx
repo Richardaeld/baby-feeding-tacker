@@ -9,12 +9,12 @@ const form = {
   inputs: [
     {
       name:'name',
-      type: 'input',
+      type: 'select',
+      enum: [
+        {key: 1, name: 'Issac'},
+        {key: 2, name: 'Chloe'},
+      ]
     },
-    // {
-    //   name: 'time',
-    //   type: 'input',
-    // },
     {
       name: 'consumed',
       type: 'input',

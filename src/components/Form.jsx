@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { FormInput } from './FormInput'
 import { FormTextarea } from './FormTextarea';
 import { FormCheckbox } from './FormCheckbox';
+import { FormSelect } from './FormSelect';
 import { useState } from 'react';
 
 export function Form ({ form, addFeeding, feeding }) {
@@ -23,7 +24,8 @@ export function Form ({ form, addFeeding, feeding }) {
                case 'textarea'      : return <FormTextarea key={input.key} textarea={input} setFormData={setFormData}/>
                case 'input_checkbox': return <FormCheckbox key={input.key} checkbox={input} setFormData={setFormData}/>
                case 'input'         :
-               case 'input_text'    : return <FormInput key={input.key} input={input} setFormData={setFormData}/>
+               case 'input_text'    : return <FormInput  key={input.key} input={input} setFormData={setFormData}/>
+               case 'select'        : return <FormSelect key={input.key} select={input} setFormData={setFormData} />
             }
          })}
 
