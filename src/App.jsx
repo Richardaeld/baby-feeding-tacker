@@ -59,17 +59,8 @@ export function App() {
 
   return (
     <main>
-      <h1>Baby Feeding Tracker</h1>
-      <div>
-        <h2>Babies</h2>
-        <div>
-          <h3>baby name</h3>
-        </div>
-        <div>
-          <h3>baby name</h3>
-        </div>
-      </div>
       <MainNav></MainNav>
+      <h1>Baby Feeding Tracker</h1>
       <Routes>
         <Route path='/'         />
         <Route path='/addFeeding' element={<Form form={form} addFeeding={addFeeding} feeding={feedings}/>}></Route>
