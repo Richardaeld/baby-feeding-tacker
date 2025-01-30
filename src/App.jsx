@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Form } from './components/Form';
 import { Feeding } from './components/Feeding';
+import { MainNav } from './components/MainNav';
 import { format } from 'date-fns';
 import { Routes, Route } from 'react-router-dom';
 
@@ -68,8 +69,10 @@ export function App() {
           <h3>baby name</h3>
         </div>
       </div>
+      <MainNav></MainNav>
       <Routes>
-        <Route path='/'        element={<Form form={form} addFeeding={addFeeding} feeding={feedings}/>} />
+        <Route path='/'         />
+        <Route path='/addFeeding' element={<Form form={form} addFeeding={addFeeding} feeding={feedings}/>}></Route>
         <Route path='/history' element={<Feeding feedings={feedings}/>} />      
       </Routes>
     </main>
