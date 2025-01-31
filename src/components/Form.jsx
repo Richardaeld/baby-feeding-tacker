@@ -18,18 +18,21 @@ export function Form ({ form, addFeeding, feeding }) {
    return (
       <form onSubmit={handleSubmit}>
          <h2>{form.header}</h2>
-         {form.inputs.map(input => {
-            // console.log(input.type)
-            switch (input.type) {
-               case 'textarea'      : return <FormTextarea key={input.key} textarea={input} setFormData={setFormData}/>
-               case 'input_checkbox': return <FormCheckbox key={input.key} checkbox={input} setFormData={setFormData}/>
-               case 'input'         :
-               case 'input_text'    : return <FormInput  key={input.key} input={input} setFormData={setFormData}/>
-               case 'select'        : return <FormSelect key={input.key} select={input} setFormData={setFormData} />
-            }
-         })}
-
-         <button>Submit</button>
+         <div>
+            {form.inputs.map(input => {
+               // console.log(input.type)
+               switch (input.type) {
+                  case 'textarea'      : return <FormTextarea key={input.key} textarea={input} setFormData={setFormData}/>
+                  case 'input_checkbox': return <FormCheckbox key={input.key} checkbox={input} setFormData={setFormData}/>
+                  case 'input'         :
+                  case 'input_text'    : return <FormInput  key={input.key} input={input} setFormData={setFormData}/>
+                  case 'select'        : return <FormSelect key={input.key} select={input} setFormData={setFormData} />
+               }
+            })}
+         </div>
+         <div>
+            <button class="submit-button">Submit</button>
+         </div>
       </form>
    )
 }

@@ -57,14 +57,12 @@ nav a {
 
 
 /* Add Feeding */
-form {
-   /* width: 50%; */
-
+form div:last-child {
    display:flex;
    flex-direction: column;
-   justify-content: center;
+   align-items: center;
 }
-form label {
+form div label {
    margin: 1% 15% 0 15%;
    display: flex;
    justify-content: space-evenly;
@@ -72,9 +70,15 @@ form label {
 }
 form button {
    margin-top: 2%;
+   width:50%;
 }
-form label span {
+form div label span {
    flex: 1;
+}
+
+form div input[type='checkbox'] {
+   width:35px;
+   height: 35px;
 }
 
 .feeding-item {
@@ -90,4 +94,14 @@ form label span {
 
 .feeding-item div:last-child {
    /* justify-content: start; */
+}
+
+.submit-button {
+   background-color: #4B8A5C;
+   border: 2px solid #79db93;
+   border-radius: 10px;
+   color: #fff;
+   text-shadow: 1px 1px #010203;
+   font-size: .95rem;
+   padding: .75rem 0;
 }
