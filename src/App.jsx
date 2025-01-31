@@ -19,7 +19,8 @@ const form = {
     },
     {
       name: 'consumed',
-      type: 'input',
+      type: 'input_radio',
+      radio: [Array.from({ length:16 }, (_, i) => i + 1)]
     },
     {
       name: 'extra_hungry',
@@ -34,6 +35,7 @@ const form = {
 }
 form.inputs.map(input => input.key = crypto.randomUUID());
 
+console.log(form)
 
 
 export function App() {
