@@ -9,11 +9,18 @@ export function Form ({ form, addFeeding, feeding }) {
 
    const [formData, setFormData] = useState("");
 
-   function handleSubmit(e) {
+   const handleSubmit = (e) => {
       e.preventDefault();
       // if (!Valid(e.target)) return // TODO
       addFeeding(formData);
-   } 
+   };
+
+   const addClass = (addClass, e) =>  
+      e.target.closest('button').classList.add(addClass);
+
+   const removeClass = (removeClass, e) => 
+      e.target.closest('button').classList.remove(removeClass);
+   
 
    return (
       <form onSubmit={handleSubmit}>
@@ -31,7 +38,13 @@ export function Form ({ form, addFeeding, feeding }) {
             })}
          </div>
          <div>
-            <button class="submit-button">Submit</button>
+            <button 
+               onMouseEnter={(e) => addClass('button-depressed', e)} 
+               onMouseLeave={(e) => removeClass('button-depressed', e)} 
+               className="button submit-button"
+            >
+               <div>Submit</div>
+            </button>
          </div>
       </form>
    )
