@@ -18,9 +18,9 @@ const form = {
       ]
     },
     {
-      name: 'consumed',
+      name: 'consumed_(oz)',
       type: 'input_radio',
-      radio: [Array.from({ length:16 }, (_, i) => i + 1)]
+      radio: Array.from({ length:16 }, (_, i) => i + 1)
     },
     {
       name: 'extra_hungry',
