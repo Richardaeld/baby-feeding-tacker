@@ -1,4 +1,4 @@
 export function capitalizeEveryFirstLetter (string) {
-   return string.replace("_", " ").split(" ").map(word => 
+   return string.replaceAll("_", " ").split(" ").map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
 }
