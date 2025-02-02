@@ -4,6 +4,7 @@ import { FormTextarea } from './FormTextarea';
 import { FormCheckbox } from './FormCheckbox';
 import { FormSelect } from './FormSelect';
 import { useState } from 'react';
+import { FormRadio } from './FormRadio';
 
 export function Form ({ form, addFeeding, feeding }) {
 
@@ -34,6 +35,7 @@ export function Form ({ form, addFeeding, feeding }) {
                   case 'input'         :
                   case 'input_text'    : return <FormInput  key={input.key} input={input} setFormData={setFormData}/>
                   case 'select'        : return <FormSelect key={input.key} select={input} setFormData={setFormData} />
+                  // case 'input_radio'   : return <FormRadio  key={input.key} formInput={input} setFormData={setFormData} />
                }
             })}
          </div>

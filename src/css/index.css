@@ -150,6 +150,6 @@ form div input[type='checkbox'] {
 
 }
 .button-depressed div {
-   transform: scale(.9) translateY(6px);
+   transform: scale(.8) translateY(6px);
    /* transform: translateY(2rem); */
 }
