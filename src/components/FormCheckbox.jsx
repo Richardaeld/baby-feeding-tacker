@@ -2,21 +2,21 @@ import PropTypes from 'prop-types';
 import { capitalizeEveryFirstLetter } from './../js/general.js';
 import { useState } from 'react';
 
-export function FormCheckbox({ checkbox, setFormData }) {
+export function FormCheckbox({ inputData, setFormData }) {
    const [newValue, setNewValue] = useState("");
 
   return (
-      <label htmlFor={checkbox.name}>
-         <span>{capitalizeEveryFirstLetter(checkbox.name)}</span>
-         <input 
-            id={checkbox.name}
+      <label htmlFor={inputData.name}>
+         <span>{capitalizeEveryFirstLetter(inputData.name)}</span>
+         <input
+            id={inputData.name}
             type="checkbox"
-            name={checkbox.name}
+            name={inputData.name}
             onChange={e => {
                setNewValue(e.target.checked)
                setFormData(prevData => ({
                   ...prevData,
-                  [checkbox.name]: e.target.checked
+                  [inputData.name]: e.target.checked
                }))
             }}
             checked={newValue}
@@ -26,7 +26,7 @@ export function FormCheckbox({ checkbox, setFormData }) {
 }
 
 FormCheckbox.propTypes = {
-   checkbox: PropTypes.shape({
+   inputData: PropTypes.shape({
       id:PropTypes.string,
       name:PropTypes.string,
       type:PropTypes.string,

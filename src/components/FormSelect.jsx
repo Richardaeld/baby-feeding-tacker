@@ -2,36 +2,36 @@ import PropTypes from 'prop-types';
 import { capitalizeEveryFirstLetter } from './../js/general.js';
 import { useState } from 'react';
 
-export function FormSelect ({ select, setFormData }) {
+export function FormSelect ({ inputData, setFormData }) {
    const [newValue, setNewValue] = useState("");
 
    return (
-      <label htmlFor={select.name}>
-         <span>{capitalizeEveryFirstLetter(select.name)}</span>
-         <select 
-            id={select.name}
+      <label htmlFor={inputData.name}>
+         <span>{capitalizeEveryFirstLetter(inputData.name)}</span>
+         <select
+            id={inputData.name}
             type="text"
-            name={select.name}
+            name={inputData.name}
             onChange={e => {
                setNewValue(e.target.value)
                setFormData(prevData => ({
                   ...prevData,
-                  [select.name]: e.target.value
+                  [inputData.name]: e.target.value
                }));
             }}
             value={newValue}
             autoComplete='off'
          >
-            {select.enum.map(option => 
+            {inputData.enum.map(option =>
                <option key={crypto.randomUUID()} value={option.key}>{option.name}</option>
             )}
          </select>
-      </label> 
+      </label>
    )
 }
 
 FormSelect.propTypes = {
-   select: PropTypes.shape({
+   inputData: PropTypes.shape({
       id:PropTypes.string,
       name:PropTypes.string,
       type:PropTypes.string,

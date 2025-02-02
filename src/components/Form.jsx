@@ -30,11 +30,11 @@ export function Form ({ form, addFeeding, feeding }) {
             {form.inputs.map(input => {
                // console.log(input.type)
                switch (input.type) {
-                  case 'textarea'      : return <FormTextarea key={input.key} textarea={input} setFormData={setFormData}/>
-                  case 'input_checkbox': return <FormCheckbox key={input.key} checkbox={input} setFormData={setFormData}/>
+                  case 'textarea'      : return <FormTextarea key={input.key} inputData={input} setFormData={setFormData}/>
+                  case 'input_checkbox': return <FormCheckbox key={input.key} inputData={input} setFormData={setFormData}/>
                   case 'input'         :
-                  case 'input_text'    : return <FormInput  key={input.key} input={input} setFormData={setFormData}/>
-                  case 'select'        : return <FormSelect key={input.key} select={input} setFormData={setFormData} />
+                  case 'input_text'    : return <FormInput  key={input.key}   inputData={input} setFormData={setFormData}/>
+                  case 'select'        : return <FormSelect key={input.key}   inputData={input} setFormData={setFormData} />
                   // case 'input_radio'   : return <FormRadio  key={input.key} formInput={input} setFormData={setFormData} />
                }
             })}
