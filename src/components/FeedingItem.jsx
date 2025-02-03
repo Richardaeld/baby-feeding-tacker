@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
 export default function FeedingItem({ feeding }) {
+   console.log('feeding',feeding)
   return (
       <div className="feeding-item">
          <div>
@@ -8,7 +9,10 @@ export default function FeedingItem({ feeding }) {
             <div>{feeding.time}</div>
          </div>
          <div>
-            <div>{feeding.consumed} oz.</div>
+            <div>{feeding.feeding_type}</div>
+            <div>{feeding.breast}</div>
+
+            <div>{feeding.bottle}</div>
             <div>{feeding.extra_hungry ? "Extra Hungry" : ""}</div>
          </div>
          <div>{feeding.notes}</div>
