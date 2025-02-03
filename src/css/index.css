@@ -61,3 +61,16 @@ nav a {
    color: #fff;
    text-decoration: none;
 }
+
+.visibility {
+   transition-duration: 1s;
+   transform: scale(1);
+   opacity: 1;
+   max-height: 2000px;
+}
+.visibility-none {
+   max-height: 0;
+   transform: scale(0);
+   opacity: 0;
+   padding:0;
+}
