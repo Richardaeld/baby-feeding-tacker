@@ -6,7 +6,7 @@ export function FormRadio ({ inputData, setFormData, removeClass, addClass }) {
    const [newValue, setNewValue] = useState("");
 
    return (
-      <label className="input-radio">
+      <fieldset className="input-radio">
          <span>{capitalizeEveryFirstLetter(inputData.name)}</span>
          <div className="input-radio-buttons">
             {inputData.radio.map(radio => {
@@ -38,12 +38,12 @@ export function FormRadio ({ inputData, setFormData, removeClass, addClass }) {
                         value={radio}
                         // checked={newValue}
                      />
-                     <p>{radio} oz</p>
+                     <p>{radio}</p>
                   </label>
                )
             })}
          </div>
-      </label>
+      </fieldset>
   );
 }
 
@@ -53,7 +53,7 @@ FormRadio.propTypes = {
       name:PropTypes.string,
       type:PropTypes.string,
       radio:PropTypes.arrayOf(
-         PropTypes.number
+         PropTypes.oneOfType([PropTypes.number, PropTypes.string])
       )
    }),
    setFormData:PropTypes.func,
