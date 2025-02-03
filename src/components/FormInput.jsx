@@ -8,7 +8,7 @@ export function FormInput ({ input, setFormData }) {
    return (
       <label htmlFor={input.name}>
          <span>{capitalizeEveryFirstLetter(input.name)}</span>
-         <input 
+         <input
             id={input.name}
             type="text"
             name={input.name}
