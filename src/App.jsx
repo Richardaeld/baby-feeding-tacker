@@ -11,10 +11,10 @@ const form = {
   inputs: [
     {
       name:'name',
-      type: 'select',
-      enum: [
-        {key: 1, name: 'Issac'},
-        {key: 2, name: 'Chloe'},
+      type: 'input_radio',
+      radio: [
+        'Issac',
+        'Chloe',
       ]
     },
     {
