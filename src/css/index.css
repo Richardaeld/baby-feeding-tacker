@@ -22,6 +22,12 @@
       --body-background: rgba(0, 0, 0, .25);
       --body-background-shadow: rgba(0, 0, 0, .40);
 
+
+
+   --feeding:#8e6ce9;
+   --diaper: #4a4deb;
+   --bathing:#5f640f;
+
    }
 
 .dark-mode {
@@ -73,4 +79,14 @@ nav a {
    transform: scale(0);
    opacity: 0;
    padding:0;
+}
+
+.event-type div label:nth-child(1) {
+   background-color: var(--feeding);
+}
+.event-type div label:nth-child(2) {
+   background-color: var(--diaper);
+}
+.event-type div label:nth-child(3) {
+   background-color: var(--bathing);
 }

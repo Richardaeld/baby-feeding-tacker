@@ -36,6 +36,12 @@ const form = {
       ]
     },
     {
+      name:'event_type',
+      type:'input_radio',
+      radio: ['Feeding', 'Bath', 'Diaper'],
+      className:'event-type'
+    },
+    {
       name: 'feeding_type',
       type: 'input_radio',
       radio: ['Bottle', 'Breast'],
