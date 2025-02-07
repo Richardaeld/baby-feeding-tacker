@@ -1,27 +1,29 @@
 import PropTypes from 'prop-types';
+import { format } from 'date-fns';
 
-export default function FeedingItem({ feeding }) {
-   console.log('feeding',feeding)
+export default function FeedingItem({ event }) {
+   // console.log('feeding',feeding)
   return (
-      <div className="feeding-item">
+      <div className={`event-item ${event.type}`}>
          <div>
-            <div>{feeding.name}</div>
-            <div>{feeding.time}</div>
+            <div><b>{event.name}</b></div>
+            <div>{format(event.time, 'MM/dd HH:mm')}</div>
          </div>
          <div>
-            <div>{feeding.feeding_type}</div>
-            <div>{feeding.breast}</div>
-
-            <div>{feeding.bottle}</div>
-            <div>{feeding.extra_hungry ? "Extra Hungry" : ""}</div>
+            <div>{event.feeding_type}</div>
+            <div>{event.breast}</div>
+            <div>{event.bottle}</div>
          </div>
-         <div>{feeding.notes}</div>
+         <div>
+            <div>{event.extra_hungry ? "Extra Hungry" : ""}</div>
+         </div>
+         <div>{event.notes}</div>
       </div>
   )
 }
 
 FeedingItem.propTypes = {
-   feeding: PropTypes.shape({
+   event: PropTypes.shape({
       name:PropTypes.string,
       time:PropTypes.string,
       notes:PropTypes.string,

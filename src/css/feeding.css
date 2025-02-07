@@ -1,0 +1,50 @@
+.event {
+   /* width: fit-content; */
+}
+
+.event-item {
+   margin: .75rem;
+   padding:.5rem;
+   width: 20em;
+   /* display:flex; */
+   /* flex-direction: column; */
+   border-radius: 10px;
+   border: 2px solid var(--primary);
+   background-color: var(--tertiary);
+   box-shadow:
+      4px  4px 4px 0px var(--body-background-shadow) inset,
+      -4px -4px 4px 0px var(--body-background-shadow) inset,
+      -4px -4px 4px 0px var(--body-background-shadow) inset;
+   text-shadow:
+      2px  0px 0px  var(--color-text-dark-primary-shadow),
+      0px  2px 0px  var(--color-text-dark-primary-shadow),
+      2px  2px 4px  var(--color-text-dark-primary-shadow);
+
+}
+
+.event-item > div {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   padding-top: .25em;
+}
+
+.event-feeding {
+/* purple */
+}
+.event-bathing {
+/* blue */
+}
+.event-pooping {
+/* brown */
+}
+
+/* Feeding Header */
+.event-item:first-child {
+
+}
+
+/* Notes */
+.event-item:last-child {
+   /* white-space: break; */
+}

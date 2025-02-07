@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import FeedingItem from "./FeedingItem";
+import '../css/feeding.css';
+
 
 export function Feeding({ feedings }) {
   return (
-    <section>
-      {feedings.map(feeding => 
-         <FeedingItem key={feeding.key} feeding={feeding} />)
+    <section className="event">
+      {feedings.map(feeding =>
+         <FeedingItem key={feeding.key} event={feeding} />)
       }
     </section>
   )
