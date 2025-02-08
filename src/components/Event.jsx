@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import FeedingItem from "./FeedingItem";
+import FeedingItem from "./EventItem";
 import '../css/feeding.css';
 
 

@@ -4,7 +4,7 @@ import { format } from 'date-fns';
 import { Routes, Route } from 'react-router-dom';
 
 import { Form } from './components/Form';
-import { Feeding } from './components/Feeding';
+import { Feeding } from './components/Event.jsx';
 import { MainNav } from './components/MainNav';
 
 import { capitalizeEveryFirstLetter } from './js/general.js';
