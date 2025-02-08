@@ -38,7 +38,7 @@ const form = {
     {
       name:'event_type',
       type:'input_radio',
-      radio: ['Feeding', 'Bath', 'Diaper'],
+      radio: ['Feeding', 'Bath', 'Diaper', 'Medicine', 'Other'],
       className:'event-type'
     },
     {

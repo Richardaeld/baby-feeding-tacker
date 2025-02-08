@@ -27,7 +27,8 @@
    --feeding:#8e6ce9;
    --diaper: #4a4deb;
    --bathing:#5f640f;
-
+   --medicine:#ca3db7;
+   --other:#72d2df;
    }
 
 .dark-mode {
@@ -89,4 +90,10 @@ nav a {
 }
 .event-type div label:nth-child(3) {
    background-color: var(--bathing);
+}
+.event-type div label:nth-child(4) {
+   background-color: var(--medicine);
+}
+.event-type div label:nth-child(5) {
+   background-color: var(--other);
 }
