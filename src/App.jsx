@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { format } from 'date-fns';
 import { Routes, Route } from 'react-router-dom';
 
@@ -86,6 +86,46 @@ form.inputs.map(input => input.key = crypto.randomUUID());
 
 export function App() {
   const [feedings, setFeedings] = useState([]);
+
+
+async function fetchEvents() {
+  try {
+    const response =  await fetch ('http://localhost:8080/events', {
+      method:'GET',
+      headers: {
+        'Content-Type':'application/json',
+      }
+    })
+    if (!response.ok) throw new Error("Network error");
+
+    const events = await response.json();
+
+    console.log(events)
+
+    return events;
+  } catch (error) {
+    console.error("FETCH BROKEN ", error)
+  }
+}
+async function displayEvents() {
+  const events = await fetchEvents();
+  console.log("------------------------------", events)
+
+  events.forEach(feeding => {
+    setFeedings(prevFeedings => [
+      ...prevFeedings, {
+        key:crypto.randomUUID(),
+        name: feeding.event_type,
+        time: feeding.start_on,
+      }
+    ])
+  })
+
+}
+useEffect(() => {
+  displayEvents()
+}, [])
+
 
 
   function addFeeding (feeding) {
