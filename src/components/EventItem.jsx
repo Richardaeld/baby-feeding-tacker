@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 
 export default function FeedingItem({ event }) {
-   // console.log('feeding',feeding)
+   console.log('EventItem.jsx',event)
   return (
-      <div className={`event-item ${event.type}`}>
+      <div className={`event-item ${event.event_type}`}>
          <div>
             <div><b>{event.name}</b></div>
             <div>{format(event.time, 'MM/dd HH:mm')}</div>

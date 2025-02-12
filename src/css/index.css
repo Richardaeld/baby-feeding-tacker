@@ -24,11 +24,15 @@
 
 
 
+   --bathing:#4a4deb;
+   --diaper: #5f640f;
    --feeding:#8e6ce9;
-   --diaper: #4a4deb;
-   --bathing:#5f640f;
+   --growth:#66b266;
    --medicine:#ca3db7;
-   --other:#72d2df;
+   --night-check:#2c3e50;
+   --pumping:#f7a7b7;
+   --temperature:#f39c12;
+   --tummy-time:#72d2df;
    }
 
 .dark-mode {
@@ -82,18 +86,41 @@ nav a {
    padding:0;
 }
 
-.event-type div label:nth-child(1) {
-   background-color: var(--feeding);
-}
-.event-type div label:nth-child(2) {
-   background-color: var(--diaper);
-}
-.event-type div label:nth-child(3) {
+
+.event-item.BATH {
    background-color: var(--bathing);
 }
-.event-type div label:nth-child(4) {
+.event-item.DIAPER {
+   background-color: var(--diaper);
+
+}
+.event-item.FEEDING {
+   background-color: var(--feeding);
+
+}
+.event-item.GROWTH {
+   background-color: var(--growth);
+
+}
+.event-item.MEDICATION {
    background-color: var(--medicine);
+
 }
-.event-type div label:nth-child(5) {
-   background-color: var(--other);
+.event-item.NIGHT_CHECK {
+   background-color: var(--night-check);
+
 }
+.event-item.PUMPING {
+   background-color: var(--pumping);
+
+}
+.event-item.TEMPERATURE {
+   background-color: var(--temperature);
+
+}
+.event-item.TUMMY_TIME {
+   background-color: var(--tummy-time);
+
+}
+
+
