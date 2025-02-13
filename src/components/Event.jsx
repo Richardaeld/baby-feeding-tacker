@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
 import FeedingItem from "./EventItem";
-import '../css/feeding.css';
+import '../css/event.css';
 
 
-export function Feeding({ feedings }) {
+
+// display 
+
+
+export function Events({ feedings }) {
   return (
     <section className="event">
       {feedings.map(feeding =>
@@ -13,7 +17,7 @@ export function Feeding({ feedings }) {
   )
 }
 
-Feeding.propTypes = {
+Events.propTypes = {
   feedings: PropTypes.arrayOf(
     PropTypes.shape({
       

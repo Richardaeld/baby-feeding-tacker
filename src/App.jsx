@@ -1,10 +1,11 @@
 // import { useState } from 'react'
 import { useEffect, useState } from 'react';
-import { format } from 'date-fns';
+// import { format } from 'date-fns';
 import { Routes, Route } from 'react-router-dom';
 
-import { Form } from './components/Form';
-import { Feeding } from './components/Event.jsx';
+// import { Form } from './components/Form';
+// import { Feeding } from './components/Event.jsx';
+import { History } from './pages/History';
 import { MainNav } from './components/MainNav';
 
 // import { capitalizeEveryFirstLetter } from './js/general.js';
@@ -88,7 +89,7 @@ form.inputs.map(input => input.key = crypto.randomUUID());
 export function App() {
   useEffect(() => {
     const getEvents = async () => {
-      const events =  await displayEvents('http://localhost:8080/events', 'GET');
+      const events =  await displayEvents('http://localhost:8080/events/feeding', 'GET');
       setFeedings('');
       events.map(event => addEvent(setFeedings, event))
     }
@@ -101,11 +102,11 @@ export function App() {
   return (
     <main>
       <MainNav></MainNav>
-      <h1>Baby Feeding Tracker</h1>
+      <h1>Baby Event Tracker</h1>
       <Routes>
         <Route path='/'         />
-        <Route path='/addFeeding' element={<Form form={form} addFeeding={addEvent} feeding={feedings}/>}></Route>
-        <Route path='/history' element={<Feeding feedings={feedings}/>} />
+        {/* <Route path='/addFeeding' element={<Form form={form} addFeeding={addEvent} feeding={feedings}/>}></Route> */}
+        <Route path='/history' element={<History Events={feedings}/>} />
       </Routes>
     </main>
   )

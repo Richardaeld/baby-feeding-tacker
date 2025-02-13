@@ -22,6 +22,7 @@ export async function fetchEvents(http, method) {
 
  export async function displayEvents(http, method) {
    const events = await fetchEvents(http, method);
+   console.log(events,'----------------------------------------')
    return events;
  }
 
@@ -31,9 +32,11 @@ export async function fetchEvents(http, method) {
       setEvent(feedings => [
         ...feedings, {
           key:crypto.randomUUID(),
+          first_name:event.first_name,
           name: event.event_type,
-          time: event.start_on,
           event_type: event.event_type,
+          time: event.start_on,
+          time_end:event.end_on,
           // key:feeding.key,
           // name: feeding.name,
           // breast: feeding.breast,
