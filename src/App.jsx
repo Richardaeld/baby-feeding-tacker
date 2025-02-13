@@ -91,13 +91,13 @@ export function App() {
   useEffect(() => {
     const getEvents = async () => {
       const events =  await displayEvents('http://localhost:8080/events/feeding', 'GET');
-      setFeedings('');
-      events.map(event => addEvent(setFeedings, event))
+      setEvents('');
+      events.map(event => addEvent(setEvents, event))
     }
     getEvents();
   }, [])
 
-  const [feedings, setFeedings] = useState([]);
+  const [events, setEvents] = useState([]);
 
 
   return (
@@ -105,9 +105,9 @@ export function App() {
       <MainNav></MainNav>
       <h1>Baby Event Tracker</h1>
       <Routes>
-        <Route path='/' element={<Home events={feedings}/>}        />
+        <Route path='/' element={<Home events={events}/>}        />
         {/* <Route path='/addFeeding' element={<Form form={form} addFeeding={addEvent} feeding={feedings}/>}></Route> */}
-        <Route path='/history' element={<History Events={feedings}/>} />
+        <Route path='/history' element={<History Events={events}/>} />
       </Routes>
     </main>
   )
