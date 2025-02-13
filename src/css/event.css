@@ -49,7 +49,24 @@
    /* white-space: break; */
 }
 
-
+/* ================ */
+/* Home */
+/* ================ */
+section.home {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+section.home div.new-day {
+   width: 100%;
+   text-align: center;
+}
+section.home .new-day > div {
+   background-color: var(--primary);
+   width: 100%;
+   height:2px
+}
 
 /* ================ */
 /* History */
