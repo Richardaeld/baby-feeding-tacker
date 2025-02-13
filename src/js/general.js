@@ -20,31 +20,31 @@ export async function fetchEvents(http, method) {
  }
 
 
- export async function displayEvents(http, method) {
-   const events = await fetchEvents(http, method);
-   console.log(events,'----------------------------------------')
-   return events;
- }
+export async function displayEvents(http, method) {
+  return await fetchEvents(http, method);
+}
 
 
- export function addEvent(setEvent, event) {
-      console.log('newfeeding', event)
-      setEvent(feedings => [
-        ...feedings, {
-          key:crypto.randomUUID(),
-          first_name:event.first_name,
-          name: event.event_type,
-          event_type: event.event_type,
-          time: event.start_on,
-          time_end:event.end_on,
-          // key:feeding.key,
-          // name: feeding.name,
-          // breast: feeding.breast,
-          // time:format(new Date(), 'yyyy/MM/dd HH:mm:ss'),
-          // bottle:feeding.bottle,
-          // feeding_type: feeding.feeding_type,
-          // extra_hungry:feeding.extra_hungry,
-          // notes:feeding.notes,
-        }
-      ])
- }
+export function addEvent(setEvent, event) {
+  // console.log('newfeeding', event)
+  setEvent(feedings => [
+    ...feedings, {
+      key:crypto.randomUUID(),
+      first_name:event.first_name,
+      name: event.event_type,
+      event_type: event.event_type,
+      time: event.start_on,
+      time_end:event.end_on,
+      // key:feeding.key,
+      // name: feeding.name,
+      // breast: feeding.breast,
+      // time:format(new Date(), 'yyyy/MM/dd HH:mm:ss'),
+      // bottle:feeding.bottle,
+      // feeding_type: feeding.feeding_type,
+      // extra_hungry:feeding.extra_hungry,
+      // notes:feeding.notes,
+    }
+  ])
+}
+
+

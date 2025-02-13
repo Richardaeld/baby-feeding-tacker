@@ -48,3 +48,53 @@
 .event-item:last-child {
    /* white-space: break; */
 }
+
+
+
+/* ================ */
+/* History */
+/* ================ */
+/* Grid container */
+section.history > div {
+   display: grid;
+   grid-template-columns: 150px repeat(3, 1fr);
+   grid-template-rows: repeat(24, 50px);
+   /* gap: 1px; */
+}
+
+/* Header row */
+section.history header {
+   display: contents;
+   font-weight: bold;
+}
+
+/* Header items */
+section.history header > div {
+   padding: 10px;
+   text-align: center;
+   border: 1px solid var(--primary);
+}
+
+/* Rows Containers */
+section.history > div > div {
+   display: contents;
+}
+/* Rows items */
+section.history > div > div > div {
+   padding: 10px;
+   text-align: center;
+   border: 1px solid var(--primary)
+}
+
+/* Styling for the time column */
+section.history > div > div > div:first-child {
+   font-weight: bold;
+}
+
+section.history > div > div > div:nth-child(n+2) {
+   /* background-color: #fff; */
+}
+
+section.history > div > div > div:hover {
+   background-color: var(--tertiary);
+}

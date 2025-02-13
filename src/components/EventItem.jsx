@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 
 export function EventItem({ event }) {
-   console.log('EventItem.jsx',event)
+   // console.log('EventItem.jsx',event)
   return (
       <div className={`event-item ${event.event_type}`}>
          <div>
