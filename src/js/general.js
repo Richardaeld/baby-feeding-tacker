@@ -35,6 +35,7 @@ export function addEvent(setEvent, event) {
       event_type: event.event_type,
       start_on: event.start_on,
       end_on:event.end_on,
+      baby_id: event.baby_id,
       // key:feeding.key,
       // name: feeding.name,
       // breast: feeding.breast,

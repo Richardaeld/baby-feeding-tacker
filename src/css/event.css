@@ -68,6 +68,11 @@ section.home .new-day > div {
    height:2px
 }
 
+section.home .new-time > div {
+   width: 100%;
+   height:2px;
+}
+
 /* ================ */
 /* History */
 /* ================ */
