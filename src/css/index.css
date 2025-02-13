@@ -90,9 +90,11 @@ nav a {
 
 .event-item.BATH {
    background-color: var(--bathing);
+   /* border-color: var(--bathing); */
 }
 .event-item.DIAPER {
    background-color: var(--diaper);
+   /* border-color: var(--diaper); */
 
 }
 .event-item.FEEDING {
