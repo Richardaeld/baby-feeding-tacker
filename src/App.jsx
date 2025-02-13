@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 
 // import { Form } from './components/Form';
 // import { Feeding } from './components/Event.jsx';
+import { Home } from './pages/Home.jsx'
 import { History } from './pages/History';
 import { MainNav } from './components/MainNav';
 
@@ -104,7 +105,7 @@ export function App() {
       <MainNav></MainNav>
       <h1>Baby Event Tracker</h1>
       <Routes>
-        <Route path='/'         />
+        <Route path='/' element={<Home events={feedings}/>}        />
         {/* <Route path='/addFeeding' element={<Form form={form} addFeeding={addEvent} feeding={feedings}/>}></Route> */}
         <Route path='/history' element={<History Events={feedings}/>} />
       </Routes>
