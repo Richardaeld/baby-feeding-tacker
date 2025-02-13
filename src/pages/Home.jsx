@@ -9,7 +9,10 @@ export function Home({ events }) {
   return (
     <section>
       {events.map(event =>{
-
+         console.log({
+            Start: event.start_on,
+            End: event.end_on
+         })
 
          return <EventItem event={event}/>
       })}

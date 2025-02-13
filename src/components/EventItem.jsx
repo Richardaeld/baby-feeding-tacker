@@ -8,7 +8,7 @@ export function EventItem({ event }) {
          <div>
             {/* <div><b>{event.name}</b></div> */}
             <div><b>{event.first_name}</b></div>
-            <div>{format(event.time, 'MM/dd HH:mm')}</div>
+            <div>{format(event.start_on, 'MM/dd HH:mm')}</div>
          </div>
          {/* <div>
             <div>{event.feeding_type}</div>

@@ -30,11 +30,11 @@ export function addEvent(setEvent, event) {
   setEvent(feedings => [
     ...feedings, {
       key:crypto.randomUUID(),
+      // name: event.event_type,
       first_name:event.first_name,
-      name: event.event_type,
       event_type: event.event_type,
-      time: event.start_on,
-      time_end:event.end_on,
+      start_on: event.start_on,
+      end_on:event.end_on,
       // key:feeding.key,
       // name: feeding.name,
       // breast: feeding.breast,
