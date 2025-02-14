@@ -11,5 +11,5 @@ export function EventHeader({name}) {
 }
 
 EventHeader.propTypes = {
-
+   name: PropTypes.string
 };
