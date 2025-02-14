@@ -10,7 +10,7 @@ export function MainNav () {
       </div>
       <div>
         <Link to='/addFeeding'>
-          <i className="fa-solid fa-plus"></i> Add Event
+          <i className="fa-solid fa-circle-plus"></i> Add Event
         </Link>
       </div>
       {/* <div>

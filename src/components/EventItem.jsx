@@ -3,9 +3,6 @@ import { format } from 'date-fns';
 
 export function EventItem({ event }) {
    // console.log('EventItem.jsx', event)
-
-{/* <i class="fa-solid fa-circle-plus"></i> -- add */}
-
    const fontAwesomeMap = {
       BATH: [
          "fa-solid fa-bath",
