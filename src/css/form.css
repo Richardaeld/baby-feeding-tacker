@@ -104,7 +104,8 @@ form div input[type='checkbox'] {
 .input-radio-buttons {
    justify-content: center;
 }
-.input-radio input[type="radio"] {
+.input-radio input[type="radio"],
+label.button input[type="checkbox"] {
    visibility: hidden;
    height:0;
    width: 0;
@@ -116,7 +117,8 @@ form div input[type='checkbox'] {
    flex-wrap: wrap;
    width: 50%;
 }
-.input-radio div label {
+.input-radio div label,
+label.button {
    margin: .5rem;
    width:25%;
 }
