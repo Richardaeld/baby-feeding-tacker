@@ -88,42 +88,43 @@ nav a {
 }
 
 
+.BATH,
 .event-item.BATH {
    background-color: var(--bathing);
    /* border-color: var(--bathing); */
 }
+.DIAPER,
 .event-item.DIAPER {
    background-color: var(--diaper);
    /* border-color: var(--diaper); */
-
 }
-.event-item.FEEDING {
+.FEEDING,
+.event-item.FEEDING{
    background-color: var(--feeding);
-
 }
+.GROWTH,
 .event-item.GROWTH {
    background-color: var(--growth);
-
 }
+.MEDICATION,
 .event-item.MEDICATION {
    background-color: var(--medicine);
-
 }
+.NIGHT_CHECK,
 .event-item.NIGHT_CHECK {
    background-color: var(--night-check);
-
 }
+.PUMPING,
 .event-item.PUMPING {
    background-color: var(--pumping);
-
 }
+.TEMPERATURE,
 .event-item.TEMPERATURE {
    background-color: var(--temperature);
-
 }
+.TUMMY_TIME,
 .event-item.TUMMY_TIME {
    background-color: var(--tummy-time);
-
 }
 
 
