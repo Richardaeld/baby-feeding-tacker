@@ -19,6 +19,8 @@
    position: relative;
    width:75%;
    /* max-width: 95%; */
+   overflow-y: scroll;
+   max-height: 90vh;
 }
 
 .modal form div label,
