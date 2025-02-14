@@ -58,26 +58,26 @@ const form = {
       events: {
         onClick:[
           (e) => {
-            revealFormElement('feeding_type',          'add', e);
-            revealFormElement('breast',                'add', e);
-            revealFormElement('bottle',                'add', e);
-            revealFormElement('bath_post_care_oil',    'add', e);
-            revealFormElement('bath_post_care_lotion', 'add', e);
-            revealFormElement('diaper_type',           'add', e);
-            revealFormElement('growth_height',         'add', e);
+            revealFormElement('feeding_type',               'add', e);
+            revealFormElement('breast',                     'add', e);
+            revealFormElement('bottle',                     'add', e);
+            revealFormElement('bath_post_care_oil',         'add', e);
+            revealFormElement('bath_post_care_lotion',      'add', e);
+            revealFormElement('diaper_type',                'add', e);
+            revealFormElement('growth_height',              'add', e);
             revealFormElement('growth_height_unit',         'add', e);
-            revealFormElement('growth_weight',         'add', e);
+            revealFormElement('growth_weight',              'add', e);
             revealFormElement('growth_weight_unit',         'add', e);
-            revealFormElement('medication_name',       'add', e);
-            revealFormElement('medication_dosage',     'add', e);
+            revealFormElement('medication_name',            'add', e);
+            revealFormElement('medication_dosage',          'add', e);
             revealFormElement('medication_dosage_unit',     'add', e);
-            revealFormElement('night_check_frequency', 'add', e);
+            revealFormElement('night_check_frequency',      'add', e);
             revealFormElement('night_check_frequency_unit', 'add', e);
             revealFormElement('pumping_amount_(oz)',        'add', e);
-            revealFormElement('pumping_breast',        'add', e);
-            revealFormElement('temperature_degree_f',  'add', e);
-            revealFormElement('tummy_time_duration',    'add', e);
-            revealFormElement('tummy_time_duration_units', 'add', e);
+            revealFormElement('pumping_breast',             'add', e);
+            revealFormElement('temperature_degree_f',       'add', e);
+            revealFormElement('tummy_time_duration',        'add', e);
+            revealFormElement('tummy_time_duration_units',  'add', e);
 
             switch(e.target.value) {
               case 'Feeding':
@@ -92,28 +92,28 @@ const form = {
                 break;
               case 'Growth' :
                 revealFormElement('growth_height',      'remove', e);
-                revealFormElement('growth_height_unit',      'remove', e);
+                revealFormElement('growth_height_unit', 'remove', e);
                 revealFormElement('growth_weight',      'remove', e);
-                revealFormElement('growth_weight_unit',      'remove', e);
+                revealFormElement('growth_weight_unit', 'remove', e);
                 break;
               case 'Medication':
-                revealFormElement('medication_name',      'remove', e);
-                revealFormElement('medication_dosage',    'remove', e);
-                revealFormElement('medication_dosage_unit',    'remove', e);
+                revealFormElement('medication_name',        'remove', e);
+                revealFormElement('medication_dosage',      'remove', e);
+                revealFormElement('medication_dosage_unit', 'remove', e);
                 break;
               case 'Night Check':
-                revealFormElement('night_check_frequency', 'remove', e);
+                revealFormElement('night_check_frequency',      'remove', e);
                 revealFormElement('night_check_frequency_unit', 'remove', e);
                 break;
               case 'Pumping'    :
                 revealFormElement('pumping_amount_(oz)', 'remove', e);
-                revealFormElement('pumping_breast', 'remove', e);
+                revealFormElement('pumping_breast',      'remove', e);
                 break;
               case 'Temperature':
                 revealFormElement('temperature_degree_f', 'remove', e);
                 break;
               case 'Tummy Time':
-                revealFormElement('tummy_time_duration', 'remove', e);
+                revealFormElement('tummy_time_duration',       'remove', e);
                 revealFormElement('tummy_time_duration_units', 'remove', e);
                 break;
             }
