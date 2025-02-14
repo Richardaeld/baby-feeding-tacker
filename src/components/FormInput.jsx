@@ -2,21 +2,21 @@ import PropTypes from 'prop-types';
 import { capitalizeEveryFirstLetter } from './../js/general.js';
 import { useState } from 'react';
 
-export function FormInput ({ input, setFormData }) {
+export function FormInput ({ inputData, setFormData }) {
    const [newValue, setNewValue] = useState("");
 
    return (
-      <label htmlFor={input.name}>
-         <span>{capitalizeEveryFirstLetter(input.name)}</span>
+      <label htmlFor={inputData.name}>
+         <span>{capitalizeEveryFirstLetter(inputData.name)}</span>
          <input
-            id={input.name}
+            id={inputData.name}
             type="text"
-            name={input.name}
+            name={inputData.name}
             onChange={e => {
                setNewValue(e.target.value)
                setFormData(prevData => ({
                   ...prevData,
-                  [input.name]: e.target.value
+                  [inputData.name]: e.target.value
                }));
             }}
             value={newValue}
@@ -27,7 +27,7 @@ export function FormInput ({ input, setFormData }) {
 }
 
 FormInput.propTypes = {
-   input: PropTypes.shape({
+   inputData: PropTypes.shape({
       id:PropTypes.string,
       name:PropTypes.string,
       type:PropTypes.string,
