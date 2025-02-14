@@ -6,27 +6,30 @@ export function FormSelect ({ inputData, setFormData }) {
    const [newValue, setNewValue] = useState("");
 
    return (
-      <label htmlFor={inputData.name}>
+      <fieldset className={inputData.className}>
          <span>{capitalizeEveryFirstLetter(inputData.name)}</span>
-         <select
-            id={inputData.name}
-            type="text"
-            name={inputData.name}
-            onChange={e => {
-               setNewValue(e.target.value)
-               setFormData(prevData => ({
-                  ...prevData,
-                  [inputData.name]: e.target.value
-               }));
-            }}
-            value={newValue}
-            autoComplete='off'
-         >
-            {inputData.enum.map(option =>
-               <option key={crypto.randomUUID()} value={option.key}>{option.name}</option>
-            )}
-         </select>
-      </label>
+         <label htmlFor={inputData.name}>
+            <select
+               id={inputData.name}
+               type="text"
+               name={inputData.name}
+               onChange={e => {
+                  setNewValue(e.target.value)
+                  setFormData(prevData => ({
+                     ...prevData,
+                     [inputData.name]: e.target.value
+                  }));
+               }}
+               value={newValue}
+               autoComplete='off'
+            >
+               {inputData.enum.map(option =>
+                  <option key={crypto.randomUUID()} value={option.key}>{option.name}</option>
+               )}
+            </select>
+         </label>
+      </fieldset>
+
    )
 }
 
