@@ -65,15 +65,19 @@ const form = {
             revealFormElement('bath_post_care_lotion', 'add', e);
             revealFormElement('diaper_type',           'add', e);
             revealFormElement('growth_height',         'add', e);
+            revealFormElement('growth_height_unit',         'add', e);
             revealFormElement('growth_weight',         'add', e);
+            revealFormElement('growth_weight_unit',         'add', e);
             revealFormElement('medication_name',       'add', e);
             revealFormElement('medication_dosage',     'add', e);
+            revealFormElement('medication_dosage_unit',     'add', e);
             revealFormElement('night_check_frequency', 'add', e);
             revealFormElement('night_check_frequency_unit', 'add', e);
             revealFormElement('pumping_amount_(oz)',        'add', e);
             revealFormElement('pumping_breast',        'add', e);
             revealFormElement('temperature_degree_f',  'add', e);
             revealFormElement('tummy_time_duration',    'add', e);
+            revealFormElement('tummy_time_duration_units', 'add', e);
 
             switch(e.target.value) {
               case 'Feeding':
@@ -88,11 +92,14 @@ const form = {
                 break;
               case 'Growth' :
                 revealFormElement('growth_height',      'remove', e);
+                revealFormElement('growth_height_unit',      'remove', e);
                 revealFormElement('growth_weight',      'remove', e);
+                revealFormElement('growth_weight_unit',      'remove', e);
                 break;
               case 'Medication':
                 revealFormElement('medication_name',      'remove', e);
                 revealFormElement('medication_dosage',    'remove', e);
+                revealFormElement('medication_dosage_unit',    'remove', e);
                 break;
               case 'Night Check':
                 revealFormElement('night_check_frequency', 'remove', e);
@@ -107,6 +114,7 @@ const form = {
                 break;
               case 'Tummy Time':
                 revealFormElement('tummy_time_duration', 'remove', e);
+                revealFormElement('tummy_time_duration_units', 'remove', e);
                 break;
             }
           }
@@ -171,50 +179,80 @@ const form = {
     {
       name: 'growth_height',
       type: 'input_text',
-      className: "visibility visibility-none"
+      className: "visibility visibility-none",
+      inputType: 'number',
+      step: 1,
+      min: 0,
+      max: 100,
+    },
+    {
+      name: 'growth_height_unit',
+      type: 'input_radio',
+      className: "visibility visibility-none",
+      radio: ['inches', 'centimeter'],
     },
     {
       name: 'growth_weight',
       type: 'input_text',
-      className: "visibility visibility-none"
+      className: "visibility visibility-none",
+      inputType: 'number',
+      step: 1,
+      min: 0,
+      max: 200,
+    },
+    {
+      name: 'growth_weight_unit',
+      type: 'input_radio',
+      className: "visibility visibility-none",
+      radio: ['oz', 'lbs']
     },
     // ! Medication
     {
       name: 'medication_name',
       type: 'input_text',
-      className: "visibility visibility-none"
+      className: "visibility visibility-none",
+      inputType: 'text',
     },
     {
       name: 'medication_dosage',
       type: 'input_text',
-      className: "visibility visibility-none"
+      className: "visibility visibility-none",
+      inputType: 'number',
+      step: .01,
+      min: 0,
+      max: 200,
+    },
+    {
+      name: 'medication_dosage_unit',
+      type: 'input_radio',
+      className: "visibility visibility-none",
+      radio: ['Pill', 'oz', 'Other']
     },
     // ! Night check
     {
       name: 'night_check_frequency',
       type: 'input_text',
-      className: "visibility visibility-none"
+      className: "visibility visibility-none",
+      inputType: 'number',
+      step: 1,
+      min: 0,
+      max: 100,
     },
     {
       name: 'night_check_frequency_unit',
-      type: 'select',
+      type: 'input_radio',
       className: "visibility visibility-none",
-      enum: [
-        {
-          key: 'hour',
-          name:'hour',
-        },
-        {
-          key: 'minute',
-          name:'minute',
-        }
-      ],
+      radio: ['Hour','Minute']
     },
     // ! Pumping
     {
       name: 'pumping_amount_(oz)',
       type: 'input_text',
-      className: "visibility visibility-none"
+      className: "visibility visibility-none",
+      inputType: 'number',
+      step: .01,
+      min: 0,
+      max: 100,
     },
     {
       name: 'pumping_breast',
@@ -226,13 +264,29 @@ const form = {
     {
       name: 'temperature_degree_f',
       type: 'input_text',
-      className: "visibility visibility-none"
+      className: "visibility visibility-none",
+      inputType: 'number',
+      step: 1,
+      min: 0,
+      max: 100,
     },
     // ! Tummy Time
     {
       name: 'tummy_time_duration',
       type: 'input_text',
-      className: "visibility visibility-none"
+      className: "visibility visibility-none",
+      inputType: 'number',
+      step: 1,
+      min: 0,
+      max: 100,
+    },
+    {
+      name: 'tummy_time_duration_units',
+      type: 'input_radio',
+      className: "visibility visibility-none",
+      radio: [
+        'Minutes', 'Hours'
+      ]
     },
     {
       name:'notes',
