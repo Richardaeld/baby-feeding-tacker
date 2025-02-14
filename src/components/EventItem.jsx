@@ -18,8 +18,8 @@ export function EventItem({ event }) {
       ],
       FEEDING:[
          "fa-solid fa-drumstick-bite",
-         // "fa-solid fa-bottle-water",
-         // "fa-solid fa-bottle-droplet",
+         "fa-solid fa-bottle-water",
+         "fa-solid fa-bottle-droplet",
       ],
       GROWTH: [
          "fa-solid fa-ruler-horizontal",
@@ -82,12 +82,18 @@ export function EventItem({ event }) {
   )
 }
 
-// EventItem.propTypes = {
-//    event: PropTypes.shape({
+EventItem.propTypes = {
+   event: PropTypes.shape({
 //       name:PropTypes.string,
 //       time:PropTypes.string,
 //       notes:PropTypes.string,
 //       consumed:PropTypes.number,
 //       extra_hungry:PropTypes.bool,
-//    })
-// }
+         key       : PropTypes.string,
+         baby_id   : PropTypes.number,
+         end_on    : PropTypes.string,
+         event_type: PropTypes.string,
+         first_name: PropTypes.string,
+         start_on  : PropTypes.string,
+   })
+}
