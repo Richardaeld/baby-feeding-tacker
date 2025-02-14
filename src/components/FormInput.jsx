@@ -11,7 +11,10 @@ export function FormInput ({ inputData, setFormData }) {
          <label htmlFor={inputData.name}>
             <input
                id={inputData.name}
-               type="text"
+               type={inputData.inputType??'text'}
+               {...(inputData.step ? {step: inputData.step} : {})}
+               {...(inputData.min ? {min: inputData.min} : {})}
+               {...(inputData.max ? {max:inputData.max} : {})}
                name={inputData.name}
                onChange={e => {
                   setNewValue(e.target.value)
