@@ -14,9 +14,9 @@ export function Form ({ form, addFeeding, feeding }) {
    const [formData, setFormData] = useState("");
 
    const handleSubmit = (e) => {
-      e.preventDefault();
+      // e.preventDefault();
       // if (!Valid(e.target)) return // TODO
-      addFeeding(formData);
+      // addFeeding(formData);
    };
 
    const addClass = (addClass, closestTag, e) =>
