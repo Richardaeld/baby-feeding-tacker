@@ -13,14 +13,14 @@ export function MainNav () {
           <i className="fa-solid fa-plus"></i> Add Event
         </Link>
       </div>
-      <div>
+      {/* <div>
         <Link to='/history'>
           <i className="fa-solid fa-book-medical"></i> History
         </Link>
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         <i className="fa-solid fa-gear"></i> Settings
-      </div>
+      </div> */}
    </nav>
   )
 }

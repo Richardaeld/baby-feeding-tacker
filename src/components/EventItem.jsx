@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 
 export function EventItem({ event }) {
-   // console.log('EventItem.jsx',event)
+   // console.log('EventItem.jsx', event)
 
 {/* <i class="fa-solid fa-circle-plus"></i> -- add */}
 
@@ -12,9 +12,9 @@ export function EventItem({ event }) {
          "fa-solid fa-shower",
       ],
       DIAPER: [
-         "fa-solid fa-baby",
-         "fa-solid fa-toilet",
          "fa-solid fa-toilet-paper",
+         "fa-solid fa-toilet",
+         "fa-solid fa-baby",
       ],
       FEEDING:[
          "fa-solid fa-drumstick-bite",
@@ -22,22 +22,32 @@ export function EventItem({ event }) {
          // "fa-solid fa-bottle-droplet",
       ],
       GROWTH: [
+         "fa-solid fa-ruler-horizontal",
+         "fa-solid fa-ruler",
          "fa-solid fa-tape",
          "fa-solid fa-toilet-paper",
       ],
       MEDICATION:[
-         "fa-solid fa-stethoscope",
-         "fa-solid fa-pump-medical",
-         "fa-solid fa-tablets",
          "fa-solid fa-prescription",
          "fa-solid fa-pills",
+         "fa-solid fa-tablets",
+         "fa-solid fa-pump-medical",
+         "fa-solid fa-stethoscope",
       ],
       NIGHT_CHECK: [
          "fa-regular fa-moon",
       ],
       PUMPING:[
-         "fa-solid fa-gas-pump",
+         "fa-solid fa-droplet",
+         "fa-solid fa-hand-holding-droplet",
+         "fa-solid fa-faucet-drip",
+         "fa-solid fa-bottle-droplet",
+         "fa-regular fa-cow",
+         "fa-solid fa-cow",
+         "fa-thin fa-person-breastfeeding",
+         "fa-regular fa-person-breastfeeding",
          "fa-solid fa-person-breastfeeding",
+         "fa-solid fa-gas-pump",
       ],
       TEMPERATURE:[
          "fa-solid fa-temperature-three-quarters",

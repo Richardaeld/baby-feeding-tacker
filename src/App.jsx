@@ -103,11 +103,11 @@ export function App() {
   return (
     <main>
       <MainNav></MainNav>
-      <h1>Baby Event Tracker</h1>
+      {/* <h1>Baby Event Tracker</h1> */}
       <Routes>
         <Route path='/' element={<Home events={events}/>}        />
         {/* <Route path='/addFeeding' element={<Form form={form} addFeeding={addEvent} feeding={feedings}/>}></Route> */}
-        <Route path='/history' element={<History Events={events}/>} />
+        {/* <Route path='/history' element={<History Events={events}/>} /> */}
       </Routes>
     </main>
   )
