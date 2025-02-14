@@ -7,7 +7,7 @@ import { EventHeader } from '../components/EventHeader';
 
 export function Home({ events }) {
 
-   console.log(events)
+   // console.log(events)
    let
       contentDay,
       contentTime,

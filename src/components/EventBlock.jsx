@@ -19,5 +19,5 @@ export function EventBlock({ eventBlock }) {
 }
 
 EventBlock.propTypes = {
-   eventBlock: PropTypes.shapeOf({})
+   eventBlock: PropTypes.shape({})
 };
