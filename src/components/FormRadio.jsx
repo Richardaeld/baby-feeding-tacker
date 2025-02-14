@@ -5,7 +5,7 @@ import { useState } from 'react';
 export function FormRadio ({ inputData, setFormData, removeClass, addClass }) {
    const [newValue, setNewValue] = useState("");
 
-console.log(inputData)
+// console.log(inputData)
 
    return (
       <fieldset className={`${inputData.className} input-radio`}>
@@ -34,7 +34,7 @@ console.log(inputData)
                         }))
                      }}
                      onMouseEnter={(e) =>    addClass('button-depressed','label', e)}
-                     onMouseLeave={(e) => removeClass(['button-depressed','input-radio-selected'],'label', e)}
+                     onMouseLeave={(e) => removeClass(['button-depressed','input-radio-selected'],'label','div.input-radio-buttons', e)}
                   >
                      <input
                         id={`${inputData.name}-${radio}`}
