@@ -25,10 +25,9 @@ export function Form ({ form, addFeeding, feeding }) {
    const removeClass = (removeClass, closestTag, e) =>
       e.target.closest(closestTag).classList.remove(removeClass);
 
-   const removeClassRadio = (removeClasses, closestTag, e) => {
-      const
-         radioContainer = e.target.closest("div.input-radio-buttons"),
-         radioButtons   = radioContainer.querySelectorAll('label');
+   const removeClassRadio = (removeClasses, closestTag, container, e) => {
+      let radioContainer = e.target.closest(container);
+      const radioButtons   = radioContainer.querySelectorAll('label');
 
       radioButtons.forEach(button => {
          removeClasses.map(removeClass => {
@@ -46,7 +45,7 @@ export function Form ({ form, addFeeding, feeding }) {
                // console.log(input)
                switch (input.type) {
                   case 'textarea'      : return <FormTextarea key={input.key} inputData={input} setFormData={setFormData}/>
-                  case 'input_checkbox': return <FormCheckbox key={input.key} inputData={input} setFormData={setFormData}/>
+                  case 'input_checkbox': return <FormCheckbox key={input.key} inputData={input} setFormData={setFormData} addClass={addClass} removeClass={removeClassRadio}/>
                   case 'input'         :
                   case 'input_text'    : return <FormInput  key={input.key}   inputData={input} setFormData={setFormData}/>
                   case 'select'        : return <FormSelect key={input.key}   inputData={input} setFormData={setFormData} />
