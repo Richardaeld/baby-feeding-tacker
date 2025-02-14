@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 // import { format } from 'date-fns';
 import { Routes, Route } from 'react-router-dom';
 
-import { formStructure } from './js/form.js';
+import { formStructure } from './js/formStructure.js';
 import { Form } from './components/Form';
 // import { Feeding } from './components/Event.jsx';
 import { Home } from './pages/Home.jsx'
