@@ -9,7 +9,7 @@ import { FormCheckbox } from './FormCheckbox';
 import { FormSelect } from './FormSelect';
 import { FormRadio } from './FormRadio';
 
-export function Form ({ form, addFeeding, feeding }) {
+export function Form ({ form, addFeeding, feeding, isModalOpen }) {
 
    const [formData, setFormData] = useState("");
 
@@ -39,7 +39,8 @@ export function Form ({ form, addFeeding, feeding }) {
 
    return (
       <form onSubmit={handleSubmit}>
-         <h2>{form.header}</h2>
+         <h2>{isModalOpen ? 'Edit Feeding' : form.header}</h2>
+         {console.log(isModalOpen)}
          <div>
             {form.inputs.map(input => {
                // console.log(input)

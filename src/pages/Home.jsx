@@ -4,8 +4,10 @@ import { format } from 'date-fns';
 // import { EventItem } from '../components/EventItem'
 import { EventBlock } from '../components/EventBlock';
 import { EventHeader } from '../components/EventHeader';
+import { Modal } from '../components/Modal';
 
-export function Home({ events }) {
+
+export function Home({ events, isModalOpen, openModal, closeModal, modalChildren, setModalChildren, form, addEvent }) {
 
    // console.log(events)
    let
@@ -33,6 +35,11 @@ export function Home({ events }) {
 
   return (
     <section className="home">
+            <Modal isModalOpen={isModalOpen} closeModal={closeModal} modalChildren={modalChildren} form={form} addEvent={addEvent} events={events}>
+            {/* {console.log('HELLO')} */}
+            {/* <h1>HELLO!</h1> */}
+            {/* <button onClick={closeModal}>Close</button> */}
+         </Modal>
       <div>
          <div className="event-block event-block-header">
             {babies.map(baby =>
@@ -56,7 +63,7 @@ export function Home({ events }) {
                <span key={crypto.randomUUID()}>
                   {contentDay}
                   {contentTime}
-                  <EventBlock key={crypto.randomUUID()} eventBlock={babyobj} date={date}/>
+                  <EventBlock key={crypto.randomUUID()} eventBlock={babyobj} date={date} isModalOpen={isModalOpen} openModal={openModal} closeModal={closeModal}/>
                </span>
             )
          })}

@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 
-export function EventItem({ event }) {
+import { Modal } from './Modal';
+
+
+export function EventItem({ event, isModalOpen, openModal, closeModal }) {
    // console.log('EventItem.jsx', event)
    const fontAwesomeMap = {
       BATH: [
@@ -58,7 +61,12 @@ export function EventItem({ event }) {
 
 
   return (
-      <div className={`event-item ${event.event_type}`}>
+      <div className={`event-item ${event.event_type}`} onClick={(e)=>openModal(event, e)}>
+         {/* <Modal isOpen={isModalOpen} closeModal={closeModal}> */}
+            {/* {console.log('HELLO')} */}
+            {/* <h1>HELLO!</h1> */}
+            {/* <button onClick={closeModal}>Close</button> */}
+         {/* </Modal> */}
          <div>
             <div><i className={fontAwesomeMap[event.event_type]?.[0]}></i></div>
             {/* <div><b>{event.name}</b></div> */}

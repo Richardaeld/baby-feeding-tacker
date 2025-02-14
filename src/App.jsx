@@ -296,6 +296,8 @@ const form = {
 }
 form.inputs.map(input => input.key = crypto.randomUUID());
 
+
+
 export function App() {
   useEffect(() => {
     const getEvents = async () => {
@@ -306,7 +308,30 @@ export function App() {
     getEvents();
   }, [])
 
+
+  // const [formHeader, setFormHeader] = useState('Add Feeding')
+
+
   const [events, setEvents] = useState([]);
+
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalChildren, setModalChildren] = useState([{event_type:"DIAPER"}]);
+
+
+  const  openModal  = (event, e) => {
+    // return setIsModalOpen(true)
+    // console.log(event, e)
+    setModalChildren(event)
+
+    // console.log(modalChildren)
+
+    return setIsModalOpen(!isModalOpen)
+  };
+  const  closeModal = () => setIsModalOpen(false);
+
+  
+
 
 
   return (
@@ -314,8 +339,8 @@ export function App() {
       <MainNav></MainNav>
       {/* <h1>Baby Event Tracker</h1> */}
       <Routes>
-        <Route path='/' element={<Home events={events}/>}        />
-        <Route path='/addFeeding' element={<Form form={form} addFeeding={addEvent} feeding={events}/>}></Route>
+        <Route path='/' element={<Home events={events} isModalOpen={isModalOpen} openModal={openModal} closeModal={closeModal} modalChildren={modalChildren} setModalChildren={setModalChildren} form={form} addFeeding={addEvent} feeding={events}/>} />
+        <Route path='/addFeeding' element={<Form form={form} addFeeding={addEvent} feeding={events} isModalOpen={isModalOpen}/>}></Route>
         {/* <Route path='/history' element={<History Events={events}/>} /> */}
       </Routes>
     </main>
