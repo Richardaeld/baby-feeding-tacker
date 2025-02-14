@@ -5,6 +5,8 @@ import { useState } from 'react';
 export function FormRadio ({ inputData, setFormData, removeClass, addClass }) {
    const [newValue, setNewValue] = useState("");
 
+console.log(inputData)
+
    return (
       <fieldset className={`${inputData.className} input-radio`}>
          <span>{capitalizeEveryFirstLetter(inputData.name)}</span>
@@ -14,7 +16,7 @@ export function FormRadio ({ inputData, setFormData, removeClass, addClass }) {
                return (
                   <label
                      key={radio}
-                     className="button button-clickable"
+                     className={`button button-clickable ${radio.toUpperCase().replace(' ', '_')}`}
                      htmlFor={`${inputData.name}-${radio}`}
                      onClick={(e)      =>  {
                         // @ Add remove button animation class
