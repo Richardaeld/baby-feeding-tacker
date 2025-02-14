@@ -27,39 +27,37 @@ export function Home({ events }) {
       }
       splitEvents[date][event.baby_id].push(event)
    })
-   console.log(splitEvents)
+   // console.log(splitEvents)
 
   return (
     <section className="home">
       <div>
-      <div className="event-block event-block-header">
-         {babies.map(baby => {
-            return <EventHeader key={crypto.randomUUID()} name={baby}/>
+         <div className="event-block event-block-header">
+            {babies.map(baby =>
+               <EventHeader key={crypto.randomUUID()} name={baby}/>
+            )}
+         </div>
+         {Object.entries(splitEvents).map(([date, babyobj]) => {
+            contentTime = contentDay = '';
+            [currentDay, currentHour]  = date.split(' ');
+
+            if (previousDay !== currentDay) {
+               contentDay = <div className="new-day"><b>{currentDay} ()</b><div></div></div>;
+               previousDay = currentDay
+            }
+            if (previousHour !== currentHour) {
+               contentTime = <div className="new-time"><b>{parseInt(currentHour) + 1}:00</b><div></div></div>;
+               previousHour = currentHour
+            }
+
+            return (
+               <>
+                  {contentDay}
+                  {contentTime}
+                  <EventBlock key={crypto.randomUUID()} eventBlock={babyobj} date={date}/>
+               </>
+            )
          })}
-      </div>
-      {Object.entries(splitEvents).map(([date, babyobj]) => {
-         contentTime = contentDay = '';
-         [currentDay, currentHour]  = date.split(' ');
-
-         if (previousDay !== currentDay) {
-            contentDay = <div className="new-day"><b>{currentDay} ()</b><div></div></div>;
-            previousDay = currentDay
-         }
-         if (previousHour !== currentHour) {
-            contentTime = <div className="new-time"><b>{parseInt(currentHour) + 1}:00</b><div></div></div>;
-            previousHour = currentHour
-         }
-
-         console.log(babies)
-
-         return (
-            <>
-               {contentDay}
-               {contentTime}
-               <EventBlock key={crypto.randomUUID()} eventBlock={babyobj} date={date}/>
-            </>
-         )
-      })}
       </div>
     </section>
   );
