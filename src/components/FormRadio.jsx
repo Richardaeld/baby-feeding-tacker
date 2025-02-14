@@ -21,7 +21,7 @@ export function FormRadio ({ inputData, setFormData, removeClass, addClass }) {
                      onClick={(e)      =>  {
                         // @ Add remove button animation class
                         addClass('input-radio-selected'  ,'label', e);
-                        requestAnimationFrame(() => removeClass(['input-radio-selected', 'button-depressed'],'label', e));
+                        requestAnimationFrame(() => removeClass(['input-radio-selected', 'button-depressed'],'label', 'div.input-radio-buttons', e));
 
                         // @ Attach FormData onClick event(s)
                         if(hasInputDataOnClick) inputData.events.onClick.map(event => event(e));
