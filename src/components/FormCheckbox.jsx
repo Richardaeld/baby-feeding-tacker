@@ -6,7 +6,10 @@ export function FormCheckbox({ inputData, setFormData }) {
    const [newValue, setNewValue] = useState("");
 
   return (
+   <fieldset className={inputData.className}>
+      <span>{capitalizeEveryFirstLetter(inputData.name)}</span>
       <label htmlFor={inputData.name}>
+
          <span>{capitalizeEveryFirstLetter(inputData.name)}</span>
          <input
             id={inputData.name}
@@ -22,6 +25,8 @@ export function FormCheckbox({ inputData, setFormData }) {
             checked={newValue}
          />
       </label>
+   </fieldset>
+
   )
 }
 
