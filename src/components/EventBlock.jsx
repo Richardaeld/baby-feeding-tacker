@@ -4,13 +4,13 @@ import { EventItem } from './EventItem';
 
 export function EventBlock({ eventBlock }) {
 
-   console.log(eventBlock)
+   // console.log(eventBlock)
 
    return (
       <div className="event-block">
          {Object.entries(eventBlock).map(([key, events]) => (
             <div key={crypto.randomUUID()}>
-               {events.map(event => <EventItem key={key} event={event} />)}
+               {events.map(event => <EventItem key={crypto.randomUUID()} event={event} />)}
             </div>
          ))}
       </div>
