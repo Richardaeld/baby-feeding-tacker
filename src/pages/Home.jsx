@@ -53,11 +53,11 @@ export function Home({ events }) {
             }
 
             return (
-               <>
+               <span key={crypto.randomUUID()}>
                   {contentDay}
                   {contentTime}
                   <EventBlock key={crypto.randomUUID()} eventBlock={babyobj} date={date}/>
-               </>
+               </span>
             )
          })}
       </div>
