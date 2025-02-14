@@ -101,6 +101,9 @@ form div input[type='checkbox'] {
 .input-radio {
    position: relative;
 }
+.input-radio-buttons {
+   justify-content: center;
+}
 .input-radio input[type="radio"] {
    visibility: hidden;
    height:0;
@@ -120,4 +123,9 @@ form div input[type='checkbox'] {
 
 .input-radio-selected {
    background-color: var(--primary);
+}
+
+form textarea {
+   width: 50%;
+   height: 5rem;
 }
