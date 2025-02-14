@@ -6,23 +6,25 @@ export function FormInput ({ inputData, setFormData }) {
    const [newValue, setNewValue] = useState("");
 
    return (
-      <label htmlFor={inputData.name}>
+      <fieldset className={inputData.className}>
          <span>{capitalizeEveryFirstLetter(inputData.name)}</span>
-         <input
-            id={inputData.name}
-            type="text"
-            name={inputData.name}
-            onChange={e => {
-               setNewValue(e.target.value)
-               setFormData(prevData => ({
-                  ...prevData,
-                  [inputData.name]: e.target.value
-               }));
-            }}
-            value={newValue}
-            autoComplete='off'
-         />
-      </label>
+         <label htmlFor={inputData.name}>
+            <input
+               id={inputData.name}
+               type="text"
+               name={inputData.name}
+               onChange={e => {
+                  setNewValue(e.target.value)
+                  setFormData(prevData => ({
+                     ...prevData,
+                     [inputData.name]: e.target.value
+                  }));
+               }}
+               value={newValue}
+               autoComplete='off'
+            />
+         </label>
+      </fieldset>
    )
 }
 
