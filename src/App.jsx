@@ -91,6 +91,7 @@ export function App() {
   useEffect(() => {
     const getEvents = async () => {
       const events =  await displayEvents('http://localhost:8080/events/feeding', 'GET');
+      setEvents(''); // ! -- DEV -- stops duplicate data
       events.map(event => addEvent(setEvents, event))
     }
     getEvents();
