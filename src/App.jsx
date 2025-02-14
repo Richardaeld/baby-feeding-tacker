@@ -64,19 +64,50 @@ const form = {
             revealFormElement('bath_post_care_oil',    'add', e);
             revealFormElement('bath_post_care_lotion', 'add', e);
             revealFormElement('diaper_type',           'add', e);
+            revealFormElement('growth_height',         'add', e);
+            revealFormElement('growth_weight',         'add', e);
+            revealFormElement('medication_name',       'add', e);
+            revealFormElement('medication_dosage',     'add', e);
+            revealFormElement('night_check_frequency', 'add', e);
+            revealFormElement('night_check_frequency_unit', 'add', e);
+            revealFormElement('pumping_amount',        'add', e);
+            revealFormElement('pumping_breast',        'add', e);
+            revealFormElement('temperature_degree_f',  'add', e);
+            revealFormElement('tummy_time_duration',    'add', e);
 
             switch(e.target.value) {
-              case 'Feeding': 
-                revealFormElement('feeding_type', 'remove', e); 
+              case 'Feeding':
+                revealFormElement('feeding_type', 'remove', e);
                 break;
-              case 'Bath'   : 
-                revealFormElement('bath_post_care_oil', 'remove', e);
+              case 'Bath'   :
+                revealFormElement('bath_post_care_oil',    'remove', e);
                 revealFormElement('bath_post_care_lotion', 'remove', e);
                 break;
-              case 'Diaper' : 
+              case 'Diaper' :
                 revealFormElement('diaper_type', 'remove', e);
                 break;
-
+              case 'Growth' :
+                revealFormElement('growth_height',      'remove', e);
+                revealFormElement('growth_weight',      'remove', e);
+                break;
+              case 'Medication':
+                revealFormElement('medication_name',      'remove', e);
+                revealFormElement('medication_dosage',    'remove', e);
+                break;
+              case 'Night Check':
+                revealFormElement('night_check_frequency', 'remove', e);
+                revealFormElement('night_check_frequency_unit', 'remove', e);
+                break;
+              case 'Pumping'    :
+                revealFormElement('pumping_amount', 'remove', e);
+                revealFormElement('pumping_breast', 'remove', e);
+                break;
+              case 'Temperature':
+                revealFormElement('temperature_degree_f', 'remove', e);
+                break;
+              case 'Tummy Time':
+                revealFormElement('tummy_time_duration', 'remove', e);
+                break;
             }
           }
         ]
@@ -102,6 +133,7 @@ const form = {
         ]
       },
     },
+    // ! ====== AUX Items ====== ! //
     // ! Bath
     {
       name: 'bath_post_care_oil',
@@ -139,9 +171,68 @@ const form = {
     {
       name: 'growth_height',
       type: 'input_text',
-
-      // className: "visibility visibility-none"
-
+      className: "visibility visibility-none"
+    },
+    {
+      name: 'growth_weight',
+      type: 'input_text',
+      className: "visibility visibility-none"
+    },
+    // ! Medication
+    {
+      name: 'medication_name',
+      type: 'input_text',
+      className: "visibility visibility-none"
+    },
+    {
+      name: 'medication_dosage',
+      type: 'input_text',
+      className: "visibility visibility-none"
+    },
+    // ! Night check
+    {
+      name: 'night_check_frequency',
+      type: 'input_text',
+      className: "visibility visibility-none"
+    },
+    {
+      name: 'night_check_frequency_unit',
+      type: 'select',
+      className: "visibility visibility-none",
+      enum: [
+        {
+          key: 'hour',
+          name:'hour',
+        },
+        {
+          key: 'minute',
+          name:'minute',
+        }
+      ],
+    },
+    // ! Pumping
+    {
+      name: 'pumping_amount',
+      type: 'input_text',
+      className: "visibility visibility-none"
+    },
+    {
+      name: 'pumping_breast',
+      type: 'input_radio',
+      radio: ['Left', 'Right'],
+      className: "visibility visibility-none"
+    },
+    // ! Temperature
+    {
+      name: 'temperature_degree_f',
+      type: 'input_text',
+      className: "visibility visibility-none"
+    },
+    // ! Tummy Time
+    {
+      name: 'tummy_time_duration',
+      type: 'input_text',
+      className: "visibility visibility-none"
     },
     {
       name:'notes',
