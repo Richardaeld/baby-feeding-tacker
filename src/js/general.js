@@ -26,24 +26,28 @@ export async function displayEvents(http, method) {
 
 
 export function addEvent(setEvent, event) {
-  // console.log('newfeeding', event)
+  console.log('newfeeding', event)
   setEvent(feedings => [
     ...feedings, {
       key:crypto.randomUUID(),
-      // name: event.event_type,
-      first_name:event.first_name,
-      event_type: event.event_type,
-      start_on: event.start_on,
-      end_on:event.end_on,
-      baby_id: event.baby_id,
-      // key:feeding.key,
-      // name: feeding.name,
-      // breast: feeding.breast,
-      // time:format(new Date(), 'yyyy/MM/dd HH:mm:ss'),
-      // bottle:feeding.bottle,
-      // feeding_type: feeding.feeding_type,
-      // extra_hungry:feeding.extra_hungry,
-      // notes:feeding.notes,
+      amount      : event.amount,
+      baby_id     : event.baby_id,
+      birthday    : event.birthday,
+      color       : event.color,
+      dosage      : event.dosage,
+      end_on      : event.end_on,
+      event_id    : event.event_id,
+      event_type  : event.event_type,
+      feeding_type: event.feeding_type,
+      first_name  : event.first_name,
+      gender      : event.gender,
+      height      : event.height,
+      last_name   : event.last_name,
+      name        : event.name,
+      note        : event.note,
+      note_id     : event.note_id,
+      start_on    : event.start_on,
+      weight      : event.weight,
     }
   ])
 }
