@@ -70,7 +70,7 @@ const form = {
             revealFormElement('medication_dosage',     'add', e);
             revealFormElement('night_check_frequency', 'add', e);
             revealFormElement('night_check_frequency_unit', 'add', e);
-            revealFormElement('pumping_amount',        'add', e);
+            revealFormElement('pumping_amount_(oz)',        'add', e);
             revealFormElement('pumping_breast',        'add', e);
             revealFormElement('temperature_degree_f',  'add', e);
             revealFormElement('tummy_time_duration',    'add', e);
@@ -99,7 +99,7 @@ const form = {
                 revealFormElement('night_check_frequency_unit', 'remove', e);
                 break;
               case 'Pumping'    :
-                revealFormElement('pumping_amount', 'remove', e);
+                revealFormElement('pumping_amount_(oz)', 'remove', e);
                 revealFormElement('pumping_breast', 'remove', e);
                 break;
               case 'Temperature':
@@ -212,7 +212,7 @@ const form = {
     },
     // ! Pumping
     {
-      name: 'pumping_amount',
+      name: 'pumping_amount_(oz)',
       type: 'input_text',
       className: "visibility visibility-none"
     },
