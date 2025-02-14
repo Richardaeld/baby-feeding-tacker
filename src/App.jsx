@@ -6,7 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 // import { Form } from './components/Form';
 // import { Feeding } from './components/Event.jsx';
 import { Home } from './pages/Home.jsx'
-// import { History } from './pages/History';
+import { History } from './pages/History';
 import { MainNav } from './components/MainNav';
 
 // import { capitalizeEveryFirstLetter } from './js/general.js';
