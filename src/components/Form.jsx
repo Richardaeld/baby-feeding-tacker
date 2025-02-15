@@ -24,14 +24,18 @@ export function Form ({ form, addEvent, setEvents, feeding, isModalOpen, redirec
       // console.log(e.target)
       // console.log('------------------------------->', formData)
       const data = {}
+      let invalid = false;
       for (const [key, value] of formData.entries()) {
          console.log(key, value);
+         if (invalid) return
          if (key === 'first_name' && value === '') {
-            console.log(value)
+            console.log(key, value)
+            invalid = true;
             return;
          }
          if (key === 'event_type' && value === '') {
-            console.log(value)
+            console.log(key, value)
+            invalid = true;
             return;
          }
 
@@ -45,10 +49,14 @@ export function Form ({ form, addEvent, setEvents, feeding, isModalOpen, redirec
          }
 
       }
+      if (invalid) return
+      if(!data['first_name'] || data['first_name'] === '') return;
+      if(!data['event_type'] || data['event_type'] === '') return;
+
       data['start_on'] = new Date().toISOString();
       data['end_on']   = new Date().toDateString();
       addEvent(setEvents, data);
-      // closeModal();
+      closeModal();
       setRedirectHome(true)
    };
 
