@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
+
+
 
 import '../css/form.css';
 
@@ -9,11 +12,9 @@ import { FormCheckbox } from './FormCheckbox';
 import { FormSelect } from './FormSelect';
 import { FormRadio } from './FormRadio';
 
-export function Form ({ form, addEvent, setEvents, feeding, isModalOpen }) {
+export function Form ({ form, addEvent, setEvents, feeding, isModalOpen, redirectHome, setRedirectHome, closeModal }) {
 
    const [formData, setFormData] = useState("");
-
-   // console.log('----------------------', addEvent)
 
 
    const handleSubmit = (addEvent, e) => {
@@ -25,6 +26,16 @@ export function Form ({ form, addEvent, setEvents, feeding, isModalOpen }) {
       const data = {}
       for (const [key, value] of formData.entries()) {
          console.log(key, value);
+         if (key === 'first_name' && value === '') {
+            console.log(value)
+            return;
+         }
+         if (key === 'event_type' && value === '') {
+            console.log(value)
+            return;
+         }
+
+
          if(key === 'event_type') {
             data[key] = value.toUpperCase()
 
@@ -32,10 +43,13 @@ export function Form ({ form, addEvent, setEvents, feeding, isModalOpen }) {
 
             data[key] = value;
          }
+
       }
-      data['start_on'] = new Date()
-      data['end_on']   = new Date()
+      data['start_on'] = new Date().toISOString();
+      data['end_on']   = new Date().toDateString();
       addEvent(setEvents, data);
+      // closeModal();
+      setRedirectHome(true)
    };
 
    const addClass = (addClass, closestTag, e) =>
@@ -58,6 +72,8 @@ export function Form ({ form, addEvent, setEvents, feeding, isModalOpen }) {
 
    return (
       <form onSubmit={(e) => handleSubmit (addEvent, e)}>
+         {redirectHome && <Navigate to='/' />}
+         {/* {console.log('----------------------------', redirect)} */}
          <h2>{isModalOpen ? 'Edit Feeding' : form.header}</h2>
          {/* {console.log(isModalOpen)} */}
          <div>

@@ -34,6 +34,7 @@ export function App() {
   const [isModalOpen,   setIsModalOpen  ] = useState(false);
   const [modalChildren, setModalChildren] = useState([{event_type:"DIAPER"}]);
 
+  const [redirectHome, setRedirectHome] = useState(false);
 
   const  openModal  = (event, e) => {
     // return setIsModalOpen(true)
@@ -55,8 +56,8 @@ export function App() {
       <MainNav></MainNav>
       {/* <h1>Baby Event Tracker</h1> */}
       <Routes>
-        <Route path='/'           element={<Home events={events} addEvent={addEvent} setEvents={setEvents} isModalOpen={isModalOpen} openModal={openModal} closeModal={closeModal} modalChildren={modalChildren} setModalChildren={setModalChildren} form={form}  feeding={events}/>} />
-        <Route path='/addFeeding' element={<Form form={form} addEvent={addEvent} setEvents={setEvents} feeding={events} isModalOpen={isModalOpen}/>}></Route>
+        <Route path='/'           element={<Home events={events} addEvent={addEvent} setEvents={setEvents} isModalOpen={isModalOpen} openModal={openModal} closeModal={closeModal} modalChildren={modalChildren} setModalChildren={setModalChildren} form={form}  feeding={events} redirectHome={redirectHome} setRedirectHome={setRedirectHome}/>} />
+        <Route path='/addFeeding' element={<Form form={form} addEvent={addEvent} setEvents={setEvents} feeding={events} isModalOpen={isModalOpen} redirectHome={redirectHome} setRedirectHome={setRedirectHome}/>}></Route>
         {/* <Route path='/history' element={<History Events={events}/>} /> */}
       </Routes>
     </main>

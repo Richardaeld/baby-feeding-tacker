@@ -1,3 +1,5 @@
+// import { Navigate, useNavigate } from 'react-router-dom';
+
 export function capitalizeEveryFirstLetter (string) {
    return string.replaceAll("_", " ").split(" ").map(word =>
       word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
@@ -26,7 +28,9 @@ export async function displayEvents(http, method) {
 
 
 export function addEvent(setEvent, event) {
-  console.log('newfeeding', event)
+  // console.log('newfeeding', event)
+  if (!event.first_name && !event.event_type) return
+
   setEvent(feedings => [
     ...feedings, {
       // key         : event.event_id,
@@ -51,6 +55,7 @@ export function addEvent(setEvent, event) {
       weight      : event.weight,
     }
   ])
+  // Navigate('/');
 }
 
 
