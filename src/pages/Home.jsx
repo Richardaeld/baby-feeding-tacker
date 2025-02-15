@@ -7,7 +7,7 @@ import { EventHeader } from '../components/EventHeader';
 import { Modal } from '../components/Modal';
 
 
-export function Home({ events, isModalOpen, openModal, closeModal, modalChildren, setModalChildren, form, addEvent }) {
+export function Home({ events, isModalOpen, openModal, closeModal, modalChildren, setModalChildren, form, addEvent, setEvents }) {
 
    // console.log(events)
    let
@@ -35,7 +35,7 @@ export function Home({ events, isModalOpen, openModal, closeModal, modalChildren
 
   return (
     <section className="home">
-            <Modal isModalOpen={isModalOpen} closeModal={closeModal} modalChildren={modalChildren} form={form} addEvent={addEvent} events={events}>
+            <Modal isModalOpen={isModalOpen} closeModal={closeModal} modalChildren={modalChildren} form={form} addEvent={addEvent} setEvents={setEvents} events={events}>
             {/* {console.log('HELLO')} */}
             {/* <h1>HELLO!</h1> */}
             {/* <button onClick={closeModal}>Close</button> */}
@@ -63,7 +63,7 @@ export function Home({ events, isModalOpen, openModal, closeModal, modalChildren
                <span key={crypto.randomUUID()}>
                   {contentDay}
                   {contentTime}
-                  <EventBlock key={crypto.randomUUID()} eventBlock={babyobj} date={date} isModalOpen={isModalOpen} openModal={openModal} closeModal={closeModal}/>
+                  <EventBlock key={crypto.randomUUID()} eventBlock={babyobj} date={date} isModalOpen={isModalOpen} openModal={openModal} closeModal={closeModal} addEvent={addEvent} setEvents={setEvents}/>
                </span>
             )
          })}

@@ -9,14 +9,20 @@ import { FormCheckbox } from './FormCheckbox';
 import { FormSelect } from './FormSelect';
 import { FormRadio } from './FormRadio';
 
-export function Form ({ form, addFeeding, feeding, isModalOpen }) {
+export function Form ({ form, addEvent, feeding, isModalOpen }) {
 
    const [formData, setFormData] = useState("");
 
-   const handleSubmit = (e) => {
-      // e.preventDefault();
+   // console.log('----------------------', addEvent)
+
+
+   const handleSubmit = (addEvent, e) => {
+      e.preventDefault();
       // if (!Valid(e.target)) return // TODO
-      // addFeeding(formData);
+      const formData = new FormData(e.target);
+      // console.log(e.target)
+      // console.log(addEvent)
+      addEvent(formData);
    };
 
    const addClass = (addClass, closestTag, e) =>
@@ -38,9 +44,9 @@ export function Form ({ form, addFeeding, feeding, isModalOpen }) {
 
 
    return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) => handleSubmit (addEvent, e)}>
          <h2>{isModalOpen ? 'Edit Feeding' : form.header}</h2>
-         {console.log(isModalOpen)}
+         {/* {console.log(isModalOpen)} */}
          <div>
             {form.inputs.map(input => {
                // console.log(input)

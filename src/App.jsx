@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 // import { format } from 'date-fns';
 import { Routes, Route } from 'react-router-dom';
 
-import { formStructure } from './js/formStructure.js';
+import { formStructure, jsonFillerFile } from './js/formStructure.js';
 import { Form } from './components/Form';
 // import { Feeding } from './components/Event.jsx';
 import { Home } from './pages/Home.jsx'
@@ -17,7 +17,9 @@ import { capitalizeEveryFirstLetter, displayEvents, addEvent } from './js/genera
 export function App() {
   useEffect(() => {
     const getEvents = async () => {
-      const events =  await displayEvents('http://localhost:8080/events/feeding', 'GET');
+      // const events =  await displayEvents('http://localhost:8080/events/feeding', 'GET');
+      const events = jsonFillerFile();
+      console.log(events)
       setEvents(''); // ! -- DEV -- stops duplicate data
       events.map(event => addEvent(setEvents, event))
     }
@@ -56,8 +58,8 @@ export function App() {
       <MainNav></MainNav>
       {/* <h1>Baby Event Tracker</h1> */}
       <Routes>
-        <Route path='/' element={<Home events={events} isModalOpen={isModalOpen} openModal={openModal} closeModal={closeModal} modalChildren={modalChildren} setModalChildren={setModalChildren} form={form} addFeeding={addEvent} feeding={events}/>} />
-        <Route path='/addFeeding' element={<Form form={form} addFeeding={addEvent} feeding={events} isModalOpen={isModalOpen}/>}></Route>
+        <Route path='/' element={<Home events={events} addEvent={addEvent} setEvents={setEvents} isModalOpen={isModalOpen} openModal={openModal} closeModal={closeModal} modalChildren={modalChildren} setModalChildren={setModalChildren} form={form}  feeding={events}/>} />
+        <Route path='/addFeeding' element={<Form form={form} addEvent={addEvent} setEvents={setEvents} feeding={events} isModalOpen={isModalOpen}/>}></Route>
         {/* <Route path='/history' element={<History Events={events}/>} /> */}
       </Routes>
     </main>

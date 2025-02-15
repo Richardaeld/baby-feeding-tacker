@@ -26,10 +26,11 @@ export async function displayEvents(http, method) {
 
 
 export function addEvent(setEvent, event) {
-  console.log('newfeeding', event)
+  // console.log('newfeeding', event)
   setEvent(feedings => [
     ...feedings, {
-      key:crypto.randomUUID(),
+      // key         : event.event_id,
+      key         :crypto.randomUUID(),
       amount      : event.amount,
       baby_id     : event.baby_id,
       birthday    : event.birthday,
