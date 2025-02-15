@@ -9,7 +9,7 @@ import { FormCheckbox } from './FormCheckbox';
 import { FormSelect } from './FormSelect';
 import { FormRadio } from './FormRadio';
 
-export function Form ({ form, addEvent, feeding, isModalOpen }) {
+export function Form ({ form, addEvent, setEvents, feeding, isModalOpen }) {
 
    const [formData, setFormData] = useState("");
 
@@ -21,8 +21,21 @@ export function Form ({ form, addEvent, feeding, isModalOpen }) {
       // if (!Valid(e.target)) return // TODO
       const formData = new FormData(e.target);
       // console.log(e.target)
-      // console.log(addEvent)
-      addEvent(formData);
+      // console.log('------------------------------->', formData)
+      const data = {}
+      for (const [key, value] of formData.entries()) {
+         console.log(key, value);
+         if(key === 'event_type') {
+            data[key] = value.toUpperCase()
+
+         } else {
+
+            data[key] = value;
+         }
+      }
+      data['start_on'] = new Date()
+      data['end_on']   = new Date()
+      addEvent(setEvents, data);
    };
 
    const addClass = (addClass, closestTag, e) =>

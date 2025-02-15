@@ -20,7 +20,7 @@ export function formStructure () {
       inputs: [
       // Baby Name
       {
-         name:'name',
+         name:'first_name',
          type: 'input_radio',
          radio: [
             'Liam',

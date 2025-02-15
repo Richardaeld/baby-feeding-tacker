@@ -26,7 +26,7 @@ export async function displayEvents(http, method) {
 
 
 export function addEvent(setEvent, event) {
-  // console.log('newfeeding', event)
+  console.log('newfeeding', event)
   setEvent(feedings => [
     ...feedings, {
       // key         : event.event_id,

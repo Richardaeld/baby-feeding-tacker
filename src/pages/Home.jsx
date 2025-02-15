@@ -5,11 +5,14 @@ import { format } from 'date-fns';
 import { EventBlock } from '../components/EventBlock';
 import { EventHeader } from '../components/EventHeader';
 import { Modal } from '../components/Modal';
+import { Routes, Route, useRouteChangeEffect } from 'react-router-dom';
 
 
 export function Home({ events, isModalOpen, openModal, closeModal, modalChildren, setModalChildren, form, addEvent, setEvents }) {
 
-   // console.log(events)
+   // useRouteChangeEffect();
+
+   console.log(events)
    let
       contentDay,
       contentTime,
@@ -77,10 +80,10 @@ Home.propTypes = {
       PropTypes.shape({
          key       : PropTypes.string,
          baby_id   : PropTypes.number,
-         end_on    : PropTypes.string,
+         // end_on    : PropTypes.string,
          event_type: PropTypes.string,
          first_name: PropTypes.string,
-         start_on  : PropTypes.string,
+         // start_on  : PropTypes.string,
       })
    )
 };

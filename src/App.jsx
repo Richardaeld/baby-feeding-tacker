@@ -1,12 +1,10 @@
-// import { useState } from 'react'
 import { useEffect, useState } from 'react';
-// import { format } from 'date-fns';
 import { Routes, Route } from 'react-router-dom';
+// import { format } from 'date-fns';
 
 import { formStructure, jsonFillerFile } from './js/formStructure.js';
-import { Form } from './components/Form';
-// import { Feeding } from './components/Event.jsx';
-import { Home } from './pages/Home.jsx'
+import { Form }    from './components/Form';
+import { Home }    from './pages/Home.jsx'
 import { History } from './pages/History'; // ! fix css
 import { MainNav } from './components/MainNav';
 
@@ -30,11 +28,10 @@ export function App() {
 
   // const [formHeader, setFormHeader] = useState('Add Feeding')
 
+  
 
-  const [events, setEvents] = useState([]);
-
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [events,        setEvents       ] = useState([]);
+  const [isModalOpen,   setIsModalOpen  ] = useState(false);
   const [modalChildren, setModalChildren] = useState([{event_type:"DIAPER"}]);
 
 
@@ -58,7 +55,7 @@ export function App() {
       <MainNav></MainNav>
       {/* <h1>Baby Event Tracker</h1> */}
       <Routes>
-        <Route path='/' element={<Home events={events} addEvent={addEvent} setEvents={setEvents} isModalOpen={isModalOpen} openModal={openModal} closeModal={closeModal} modalChildren={modalChildren} setModalChildren={setModalChildren} form={form}  feeding={events}/>} />
+        <Route path='/'           element={<Home events={events} addEvent={addEvent} setEvents={setEvents} isModalOpen={isModalOpen} openModal={openModal} closeModal={closeModal} modalChildren={modalChildren} setModalChildren={setModalChildren} form={form}  feeding={events}/>} />
         <Route path='/addFeeding' element={<Form form={form} addEvent={addEvent} setEvents={setEvents} feeding={events} isModalOpen={isModalOpen}/>}></Route>
         {/* <Route path='/history' element={<History Events={events}/>} /> */}
       </Routes>
