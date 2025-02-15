@@ -56,7 +56,7 @@ export function Form ({ form, addEvent, setEvents, feeding, isModalOpen, redirec
       data['start_on'] = new Date().toISOString();
       data['end_on']   = new Date().toDateString();
       addEvent(setEvents, data);
-      closeModal();
+      if(closeModal) closeModal();
       setRedirectHome(true)
    };
 
