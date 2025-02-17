@@ -112,7 +112,13 @@ Form.propTypes = {
    feeding: PropTypes.arrayOf(
       PropTypes.shape({})
    ),
-      isModalOpen: PropTypes.func,
-      openModal: PropTypes.func,
-      closeModal: PropTypes.func,
+   isModalOpen     : PropTypes.func,
+   openModal       : PropTypes.func,
+   closeModal      : PropTypes.func,
+   modalChildren   : PropTypes.func,
+   setModalChildren: PropTypes.func,
+   addEvent        : PropTypes.func,
+   setEvents       : PropTypes.func,
+   redirectHome    : PropTypes.func,
+   setRedirectHome : PropTypes.func,
 }
