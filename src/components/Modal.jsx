@@ -18,5 +18,7 @@ export function Modal({ modalChildren, isModalOpen, closeModal, children, form, 
 }
 
 Modal.propTypes = {
-
+   isModalOpen: PropTypes.func,
+   openModal: PropTypes.func,
+   closeModal: PropTypes.func,
 };

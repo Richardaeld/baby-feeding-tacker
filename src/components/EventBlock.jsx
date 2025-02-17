@@ -19,5 +19,8 @@ export function EventBlock({ eventBlock, isModalOpen, openModal, closeModal }) {
 }
 
 EventBlock.propTypes = {
-   eventBlock: PropTypes.shape({})
+   eventBlock: PropTypes.shape({}),
+   isModalOpen: PropTypes.func,
+   openModal: PropTypes.func,
+   closeModal: PropTypes.func,
 };

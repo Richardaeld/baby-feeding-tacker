@@ -112,4 +112,7 @@ Form.propTypes = {
    feeding: PropTypes.arrayOf(
       PropTypes.shape({})
    ),
+      isModalOpen: PropTypes.func,
+      openModal: PropTypes.func,
+      closeModal: PropTypes.func,
 }
