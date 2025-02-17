@@ -8,8 +8,6 @@ import { Modal } from '../components/Modal';
 export function Home({ events, isModalOpen, openModal, closeModal, modalChildren, setModalChildren, form, addEvent, setEvents, redirectHome, setRedirectHome }) {
    // console.log(events)
    let
-      contentDay,
-      contentTime,
       previousDay,
       previousHour,
       currentDay,
@@ -33,8 +31,7 @@ export function Home({ events, isModalOpen, openModal, closeModal, modalChildren
 
   return (
     <section className="home">
-         <Modal isModalOpen={isModalOpen} closeModal={closeModal} modalChildren={modalChildren} form={form} addEvent={addEvent} setEvents={setEvents} events={events} redirectHome={redirectHome} setRedirectHome={setRedirectHome} >
-         </Modal>
+         <Modal isModalOpen={isModalOpen} closeModal={closeModal} modalChildren={modalChildren} form={form} addEvent={addEvent} setEvents={setEvents} events={events} redirectHome={redirectHome} setRedirectHome={setRedirectHome} />
       <div>
          <div className="event-block event-block-header">
             {babies.map(baby =>
@@ -42,12 +39,11 @@ export function Home({ events, isModalOpen, openModal, closeModal, modalChildren
             )}
          </div>
          {Object.entries(splitEvents).map(([date, babyobj]) => {
-            contentTime = contentDay = '';
+            let contentTime, contentDay;
             [currentDay, currentHour]  = date.split(' ');
 
             if (previousDay !== currentDay) {
                const dayOfWeek =  new Date(currentDay).toLocaleDateString('en-US', { weekday: 'short' })
-
                contentDay  = <div className="new-day"><b>{currentDay} ({dayOfWeek})</b><div></div></div>;
                previousDay = currentDay
             }
@@ -58,8 +54,8 @@ export function Home({ events, isModalOpen, openModal, closeModal, modalChildren
 
             return (
                <span key={crypto.randomUUID()}>
-                  {contentDay}
-                  {contentTime}
+                  {contentDay  ?? ''}
+                  {contentTime ?? ''}
                   <EventBlock key={crypto.randomUUID()} eventBlock={babyobj} date={date} isModalOpen={isModalOpen} openModal={openModal} closeModal={closeModal} addEvent={addEvent} setEvents={setEvents}/>
                </span>
             )
