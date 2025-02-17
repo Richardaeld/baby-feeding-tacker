@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 
 
@@ -21,37 +21,27 @@ export function Form ({ form, addEvent, setEvents, feeding, isModalOpen, redirec
       e.preventDefault();
       // if (!Valid(e.target)) return // TODO
       const formData = new FormData(e.target);
-      // console.log(e.target)
-      // console.log('------------------------------->', formData)
       const data = {}
       let invalid = false;
       for (const [key, value] of formData.entries()) {
-         console.log(key, value);
+         // console.log(key, value);
          if (invalid) return
-         if (key === 'first_name' && value === '') {
-            console.log(key, value)
-            invalid = true;
-            return;
+
+         switch (key) {
+            case 'first_name':
+               if (value === '') invalid = true;
+               break;
+
+            case 'event_type':
+               if (value === '') invalid = true;
+               data[key] = value.toUpperCase()
+               return;
+
+            default:
+               data[key] = value;
          }
-         if (key === 'event_type' && value === '') {
-            console.log(key, value)
-            invalid = true;
-            return;
-         }
-
-
-         if(key === 'event_type') {
-            data[key] = value.toUpperCase()
-
-         } else {
-
-            data[key] = value;
-         }
-
       }
       if (invalid) return
-      if(!data['first_name'] || data['first_name'] === '') return;
-      if(!data['event_type'] || data['event_type'] === '') return;
 
       data['start_on'] = new Date().toISOString();
       data['end_on']   = new Date().toDateString();
@@ -81,12 +71,9 @@ export function Form ({ form, addEvent, setEvents, feeding, isModalOpen, redirec
    return (
       <form onSubmit={(e) => handleSubmit (addEvent, e)}>
          {redirectHome && <Navigate to='/' />}
-         {/* {console.log('----------------------------', redirect)} */}
          <h2>{isModalOpen ? 'Edit Feeding' : form.header}</h2>
-         {/* {console.log(isModalOpen)} */}
          <div>
             {form.inputs.map(input => {
-               // console.log(input)
                switch (input.type) {
                   case 'textarea'      : return <FormTextarea key={input.key} inputData={input} setFormData={setFormData}/>
                   case 'input_checkbox': return <FormCheckbox key={input.key} inputData={input} setFormData={setFormData} addClass={addClass} removeClass={removeClassRadio}/>

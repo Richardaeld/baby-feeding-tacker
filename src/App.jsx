@@ -8,8 +8,7 @@ import { Home }    from './pages/Home.jsx'
 import { History } from './pages/History'; // ! fix css
 import { MainNav } from './components/MainNav';
 
-// import { capitalizeEveryFirstLetter } from './js/general.js';
-import { capitalizeEveryFirstLetter, displayEvents, addEvent } from './js/general.js';
+import { addEvent } from './js/general.js';
 
 
 export function App() {
@@ -26,10 +25,6 @@ export function App() {
 
   const form = formStructure();
 
-  // const [formHeader, setFormHeader] = useState('Add Feeding')
-
-  
-
   const [events,        setEvents       ] = useState([]);
   const [isModalOpen,   setIsModalOpen  ] = useState(false);
   const [modalChildren, setModalChildren] = useState([{event_type:"DIAPER"}]);
@@ -37,18 +32,10 @@ export function App() {
   const [redirectHome, setRedirectHome] = useState(false);
 
   const  openModal  = (event, e) => {
-    // return setIsModalOpen(true)
-    // console.log(event, e)
     setModalChildren(event)
-
-    // console.log(modalChildren)
-
     return setIsModalOpen(!isModalOpen)
   };
   const  closeModal = () => setIsModalOpen(false);
-
-  
-
 
 
   return (

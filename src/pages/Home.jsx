@@ -1,17 +1,11 @@
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 
-// import { EventItem } from '../components/EventItem'
 import { EventBlock } from '../components/EventBlock';
 import { EventHeader } from '../components/EventHeader';
 import { Modal } from '../components/Modal';
-import { Routes, Route } from 'react-router-dom';
-
-import { Navigate, useNavigate } from 'react-router-dom';
 
 export function Home({ events, isModalOpen, openModal, closeModal, modalChildren, setModalChildren, form, addEvent, setEvents, redirectHome, setRedirectHome }) {
-
-
    // console.log(events)
    let
       contentDay,
@@ -34,18 +28,12 @@ export function Home({ events, isModalOpen, openModal, closeModal, modalChildren
       }
       splitEvents[date][event.baby_id].push(event)
    })
-   // console.log(splitEvents)
-   // Navigate('/addFeeding')
+
    setRedirectHome(false);
 
   return (
     <section className="home">
-
          <Modal isModalOpen={isModalOpen} closeModal={closeModal} modalChildren={modalChildren} form={form} addEvent={addEvent} setEvents={setEvents} events={events} redirectHome={redirectHome} setRedirectHome={setRedirectHome} >
-
-            {/* {console.log(addEvent)} */}
-            {/* <h1>HELLO!</h1> */}
-            {/* <button onClick={closeModal}>Close</button> */}
          </Modal>
       <div>
          <div className="event-block event-block-header">
@@ -60,11 +48,11 @@ export function Home({ events, isModalOpen, openModal, closeModal, modalChildren
             if (previousDay !== currentDay) {
                const dayOfWeek =  new Date(currentDay).toLocaleDateString('en-US', { weekday: 'short' })
 
-               contentDay = <div className="new-day"><b>{currentDay} ({dayOfWeek})</b><div></div></div>;
+               contentDay  = <div className="new-day"><b>{currentDay} ({dayOfWeek})</b><div></div></div>;
                previousDay = currentDay
             }
             if (previousHour !== currentHour) {
-               contentTime = <div className="new-time"><b>{parseInt(currentHour) + 1}:00</b><div></div></div>;
+               contentTime  = <div className="new-time"><b>{parseInt(currentHour) + 1}:00</b><div></div></div>;
                previousHour = currentHour
             }
 
