@@ -20,7 +20,7 @@ export function EventBlock({ eventBlock, isModalOpen, openModal, closeModal }) {
 
 EventBlock.propTypes = {
    eventBlock: PropTypes.shape({}),
-   isModalOpen: PropTypes.func,
+   isModalOpen: PropTypes.bool,
    openModal: PropTypes.func,
    closeModal: PropTypes.func,
 };

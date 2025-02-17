@@ -11,21 +11,25 @@ export function Modal({ modalChildren, isModalOpen, closeModal, children, form, 
       <div className="modal-overlay" onClick={closeModal}>
         <div className="modal" onClick={(e) => e.stopPropagation()}>
           <button className="close-button" onClick={closeModal}>X</button>
-          {<Form form={form} addEvent={addEvent} setEvents={setEvents} feeding={events} isModalOpen={isModalOpen} redirectHome={redirectHome} setRedirectHome={setRedirectHome} closeModal={closeModal}/>}
+          {<Form form={form} addEvent={addEvent} setEvents={setEvents} events={events} isModalOpen={isModalOpen} redirectHome={redirectHome} setRedirectHome={setRedirectHome} closeModal={closeModal}/>}
         </div>
       </div>
    );
 }
 
 Modal.propTypes = {
-  isModalOpen     : PropTypes.func,
+  isModalOpen     : PropTypes.bool,
   openModal       : PropTypes.func,
   closeModal      : PropTypes.func,
-  modalChildren   : PropTypes.func,
+  modalChildren   : PropTypes.arrayOf(
+    PropTypes.shape({})
+  ),
   setModalChildren: PropTypes.func,
-  form            : PropTypes.shape({}),
+  form            : PropTypes.shape(
+    
+  ),
   addEvent        : PropTypes.func,
   setEvents       : PropTypes.func,
-  redirectHome    : PropTypes.func,
+  redirectHome    : PropTypes.bool,
   setRedirectHome : PropTypes.func,
 };

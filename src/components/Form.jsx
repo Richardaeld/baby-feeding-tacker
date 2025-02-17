@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 
-
-
 import '../css/form.css';
 
 import { FormInput } from './FormInput'
@@ -12,7 +10,7 @@ import { FormCheckbox } from './FormCheckbox';
 import { FormSelect } from './FormSelect';
 import { FormRadio } from './FormRadio';
 
-export function Form ({ form, addEvent, setEvents, feeding, isModalOpen, redirectHome, setRedirectHome, closeModal }) {
+export function Form ({ form, addEvent, setEvents, events, isModalOpen, redirectHome, setRedirectHome, closeModal }) {
 
    const [formData, setFormData] = useState("");
 
@@ -109,16 +107,16 @@ Form.propTypes = {
       )
    }),
    addFeeding: PropTypes.func,
-   feeding: PropTypes.arrayOf(
+   events: PropTypes.arrayOf(
       PropTypes.shape({})
    ),
-   isModalOpen     : PropTypes.func,
+   isModalOpen     : PropTypes.bool,
    openModal       : PropTypes.func,
    closeModal      : PropTypes.func,
-   modalChildren   : PropTypes.func,
+   modalChildren   : PropTypes.arrayOf(),
    setModalChildren: PropTypes.func,
    addEvent        : PropTypes.func,
    setEvents       : PropTypes.func,
-   redirectHome    : PropTypes.func,
+   redirectHome    : PropTypes.bool,
    setRedirectHome : PropTypes.func,
 }

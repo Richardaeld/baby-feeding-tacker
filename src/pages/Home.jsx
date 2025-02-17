@@ -73,7 +73,7 @@ Home.propTypes = {
    events: PropTypes.arrayOf(
       PropTypes.shape({
          key         : PropTypes.string,
-         amount      : PropTypes.string,
+         amount      : PropTypes.number,
          baby_id     : PropTypes.number,
          birthday    : PropTypes.string,
          color       : PropTypes.string,
@@ -93,14 +93,16 @@ Home.propTypes = {
          weight      : PropTypes.number,
       })
    ),
-   isModalOpen     : PropTypes.func,
+   isModalOpen     : PropTypes.bool,
    openModal       : PropTypes.func,
    closeModal      : PropTypes.func,
-   modalChildren   : PropTypes.func,
+   modalChildren   : PropTypes.arrayOf(
+      PropTypes.shape({})
+   ),
    setModalChildren: PropTypes.func,
    form            : PropTypes.shape({}),
    addEvent        : PropTypes.func,
    setEvents       : PropTypes.func,
-   redirectHome    : PropTypes.func,
+   redirectHome    : PropTypes.bool,
    setRedirectHome : PropTypes.func,
 };
