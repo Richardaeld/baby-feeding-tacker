@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { capitalizeEveryFirstLetter } from './../js/general.js';
+import { capitalizeEveryFirstLetter } from '../../js/general.js';
 import { useState } from 'react';
 
 export function FormTextarea ({ inputData, setFormData }) {

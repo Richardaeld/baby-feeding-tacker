@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 
-import { Modal } from './Modal';
+import { Modal } from '../Modal';
 
 
 export function EventItem({ event, isModalOpen, openModal, closeModal }) {

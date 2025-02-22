@@ -1,20 +1,17 @@
 import PropTypes from 'prop-types';
-import { capitalizeEveryFirstLetter } from './../js/general.js';
+import { capitalizeEveryFirstLetter } from '../../js/general.js';
 import { useState } from 'react';
 
-export function FormInput ({ inputData, setFormData }) {
+export function FormSelect ({ inputData, setFormData }) {
    const [newValue, setNewValue] = useState("");
 
    return (
       <fieldset className={inputData.className}>
          <span>{capitalizeEveryFirstLetter(inputData.name)}</span>
          <label htmlFor={inputData.name}>
-            <input
+            <select
                id={inputData.name}
-               type={inputData.inputType??'text'}
-               {...(inputData.step ? {step: inputData.step} : {})}
-               {...(inputData.min ? {min: inputData.min} : {})}
-               {...(inputData.max ? {max:inputData.max} : {})}
+               type="text"
                name={inputData.name}
                onChange={e => {
                   setNewValue(e.target.value)
@@ -25,17 +22,25 @@ export function FormInput ({ inputData, setFormData }) {
                }}
                value={newValue}
                autoComplete='off'
-            />
+            >
+               {inputData.enum.map(option =>
+                  <option key={crypto.randomUUID()} value={option.key}>{option.name}</option>
+               )}
+            </select>
          </label>
       </fieldset>
+
    )
 }
 
-FormInput.propTypes = {
+FormSelect.propTypes = {
    inputData: PropTypes.shape({
       id:PropTypes.string,
       name:PropTypes.string,
       type:PropTypes.string,
+      enum:PropTypes.arrayOf(
+         PropTypes.shape({})
+      )
    }),
    setFormData:PropTypes.func
 }

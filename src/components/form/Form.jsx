@@ -1,14 +1,14 @@
-import PropTypes from 'prop-types';
+import PropTypes    from 'prop-types';
 import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 
-import '../css/form.css';
+import '../../css/form.css';
 
-import { FormInput } from './FormInput'
+import { FormInput }    from './FormInput'
 import { FormTextarea } from './FormTextarea';
 import { FormCheckbox } from './FormCheckbox';
-import { FormSelect } from './FormSelect';
-import { FormRadio } from './FormRadio';
+import { FormSelect }   from './FormSelect';
+import { FormRadio }    from './FormRadio';
 
 export function Form ({ form, addEvent, setEvents, events, isModalOpen, redirectHome, setRedirectHome, closeModal }) {
 

@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 
-import { EventBlock } from '../components/EventBlock';
-import { EventHeader } from '../components/EventHeader';
+import { EventBlock } from '../components/events/EventBlock';
+import { EventHeader } from '../components/events/EventHeader';
 import { Modal } from '../components/Modal';
 
 export function Home({ events, isModalOpen, openModal, closeModal, modalChildren, setModalChildren, form, addEvent, setEvents, redirectHome, setRedirectHome }) {

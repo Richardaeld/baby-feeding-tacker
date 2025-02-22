@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 // import { Events } from '../components/Event.jsx'
-import { EventItem } from '../components/EventItem'
+import { EventItem } from '../components/events/EventItem'
 import '../css/event.css';
 
 export function History({ Events }) {

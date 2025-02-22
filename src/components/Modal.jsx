@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import '../css/Modal.css';
 import '../css/form.css';
 
-import { Form } from '../components/Form';
+import { Form } from './form/Form';
 
 export function Modal({ modalChildren, isModalOpen, closeModal, children, form, addEvent, setEvents, events, redirectHome, setRedirectHome }) {
    if (!isModalOpen) return null;
