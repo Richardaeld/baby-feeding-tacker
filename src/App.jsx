@@ -43,8 +43,8 @@ export function App() {
       <MainNav></MainNav>
       {/* <h1>Baby Event Tracker</h1> */}
       <Routes>
-        <Route path='/'           element={<Home events={events} addEvent={addEvent} setEvents={setEvents} isModalOpen={isModalOpen} openModal={openModal} closeModal={closeModal} modalChildren={modalChildren} setModalChildren={setModalChildren} form={form}  feeding={events} redirectHome={redirectHome} setRedirectHome={setRedirectHome}/>} />
-        <Route path='/addFeeding' element={<Form form={form} addEvent={addEvent} setEvents={setEvents} feeding={events} isModalOpen={isModalOpen} redirectHome={redirectHome} setRedirectHome={setRedirectHome}/>}></Route>
+        <Route path='/'           element={<Home form={form} feeding={events} events={events}  addEvent={addEvent} setEvents={setEvents}  isModalOpen={isModalOpen} redirectHome={redirectHome} setRedirectHome={setRedirectHome} openModal={openModal} closeModal={closeModal} modalChildren={modalChildren} setModalChildren={setModalChildren}    />} />
+        <Route path='/addFeeding' element={<Form form={form} feeding={events}                  addEvent={addEvent} setEvents={setEvents}  isModalOpen={isModalOpen} redirectHome={redirectHome} setRedirectHome={setRedirectHome} />}></Route>
         {/* <Route path='/history' element={<History Events={events}/>} /> */}
       </Routes>
     </main>
