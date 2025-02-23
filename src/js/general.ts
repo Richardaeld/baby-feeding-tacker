@@ -1,14 +1,17 @@
 // import { Navigate, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Event } from './../classes/Event.ts'
 
-export function capitalizeEveryFirstLetter (string) {
+
+export function capitalizeEveryFirstLetter (string: string) : string {
    return string.replaceAll("_", " ").split(" ").map(word =>
       word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
 }
 
 
-export async function fetchEvents(http, method) {
+export async function fetchEvents(http : string, method : string) {
    try {
-     const response =  await fetch (http, {
+     const response : Response  =  await fetch (http, {
          method: method,
          headers: {
             'Content-Type':'application/json',
@@ -22,12 +25,12 @@ export async function fetchEvents(http, method) {
  }
 
 
-export async function displayEvents(http, method) {
+export async function displayEvents(http :string, method :string) {
   return await fetchEvents(http, method);
 }
 
 
-export function addEvent(setEvent, event) {
+export function addEvent(setEvent :React.Dispatch<React.SetStateAction<Event[]>>, event :Event) {
   // console.log('newfeeding', event)
   if (!event.first_name && !event.event_type) return
 
