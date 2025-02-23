@@ -1,11 +1,12 @@
 import { capitalizeEveryFirstLetter } from './general'
+import { Form } from '../classes/Form.ts'
 
 const revealFormElement = (target: string, toggleType: 'add'|'remove', e: Event): void => {
   const form = e.target as HTMLElement | null;
   if (form === null) return;
     const formNodes :NodeListOf<HTMLFieldSetElement> = form.querySelectorAll('fieldset');
     formNodes.forEach(node => {
-        const text :string = node.querySelector('span').textContent;
+      const text :string = (node.querySelector('span') as HTMLElement).textContent!;
 
         if (text == capitalizeEveryFirstLetter(target)) {
           switch (toggleType) {
@@ -17,7 +18,7 @@ const revealFormElement = (target: string, toggleType: 'add'|'remove', e: Event)
 }
 
 export function formStructure () {
-   const form = {
+   const form :Form = {
       header: 'Add Feeding',
       inputs: [
       // Baby Name
@@ -282,7 +283,7 @@ export function formStructure () {
          name:'notes',
          type:'textarea',
       }
-      ]
+    ]
    }
    form.inputs.map(input => input.key = crypto.randomUUID());
    return form;
