@@ -1,17 +1,19 @@
 import { capitalizeEveryFirstLetter } from './general'
 
-const revealFormElement = (target, toggleType, e) => {
-   const formNodes = e.target.closest('form').querySelectorAll('fieldset');
-   formNodes.forEach(node => {
-      const text = node.querySelector('span').textContent;
+const revealFormElement = (target: string, toggleType: 'add'|'remove', e: Event): void => {
+  const form = e.target as HTMLElement | null;
+  if (form === null) return;
+    const formNodes :NodeListOf<HTMLFieldSetElement> = form.querySelectorAll('fieldset');
+    formNodes.forEach(node => {
+        const text :string = node.querySelector('span').textContent;
 
-      if (text == capitalizeEveryFirstLetter(target)) {
-         switch (toggleType) {
-         case 'remove': return node.classList.remove('visibility-none');
-         case 'add'   : return node.classList.add('visibility-none');
-         }
-      }
-   })
+        if (text == capitalizeEveryFirstLetter(target)) {
+          switch (toggleType) {
+          case 'remove': return node.classList.remove('visibility-none');
+          case 'add'   : return node.classList.add('visibility-none');
+          }
+        }
+    })
 }
 
 export function formStructure () {
