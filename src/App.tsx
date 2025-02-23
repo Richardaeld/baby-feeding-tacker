@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
-// import { format } from 'date-fns';
+import { Routes, Route }        from 'react-router-dom';
+import { format }               from 'date-fns';
 
-import { formStructure, jsonFillerFile } from './js/formStructure.js';
-import { Form }    from './components/form/Form.jsx';
-import { Home }    from './pages/Home.jsx'
-import { History } from './pages/History'; // ! fix css
-import { MainNav } from './components/MainNav';
+import { addEvent }                      from './js/general.ts';
+import { formStructure, jsonFillerFile } from './js/formStructure.ts';
 
-import { addEvent } from './js/general.js';
+import { Form }                          from './components/form/Form.jsx';
+import { Home }                          from './pages/Home.jsx'
+import { History }                       from './pages/History.jsx'; // ! fix css
+import { MainNav }                       from './components/MainNav.jsx';
+
+import './css/event.css';
 
 
 export function App() {
